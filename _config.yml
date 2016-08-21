@@ -1,0 +1,21 @@
+# Site settings
+title: Katja Hollaar
+email: afkatja@gmail.com
+description: > 
+  Personal portfolio page
+baseurl: "/patchwork-gh-pages-24"
+url: "http://afkatja.github.io"
+twitter_username: afkatja
+github_username:  afkatja
+permalink: /blog/:year/:title/
+
+
+# Build settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM
+
+collections:
+    - index
