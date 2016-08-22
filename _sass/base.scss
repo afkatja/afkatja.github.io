@@ -5,3 +5,44 @@ body {
 display: flex;
 flex-direction: column;
 }
+
+.site-header {
+    border-top: 5px solid grey;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-wrap: wrap;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-title {
+    font-size: 26px;
+    line-height: 56px;
+    margin-bottom: 0;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
+}
+
+.site-nav {
+    margin-left: auto;
+    line-height: 56px;
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+}
