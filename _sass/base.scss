@@ -23,7 +23,7 @@ flex-direction: column;
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: #444;
     }
 }
 
@@ -32,8 +32,8 @@ flex-direction: column;
     line-height: 56px;
 
     .page-link {
-        color: $text-color;
-        line-height: $base-line-height;
+        color: #444;
+        line-height: 1.2;
 
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
