@@ -4,7 +4,7 @@ email: afkatja@gmail.com
 description: > 
   Personal portfolio page
 baseurl: "/"
-url: "http://afkatja.github.io"
+url: "http://afkatja.github.io/"
 twitter_username: afkatja
 github_username:  afkatja
 permalink: /blog/:year/:title/
