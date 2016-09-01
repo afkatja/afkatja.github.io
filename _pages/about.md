@@ -11,4 +11,4 @@ I love to learn; my current (and on-going) study objectives are Italian and Swif
 
 > Quote
 
-I like that quote; it serves its purpose as a rhetoric device.
+I like that quote; it serves its purpose as a rhetoric device, in my case, I love Italian which has a long history, and Swift seems a modern, stable and pretty language to work with.
