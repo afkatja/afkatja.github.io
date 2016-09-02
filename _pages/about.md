@@ -17,3 +17,5 @@ I used to be a linguist. I used to research and teach the grammar rules and, mos
 I like this quote; it serves its purpose as a rhetoric device.
 
 I love to learn. The three diverse studies that I've done illustrate this. What I like about programming is that you can learn every day as it is such a dynamic, rapidly evolving field. My current (and on-going) study objectives are Italian and Swift. Swift seems a modern, stable and pretty language to work with, and Italian is like its counterpart, the language where you can find roots of all European languages, the language with such a rich history it brings stories with almost each word.
+
+Music has also always played a great role in my life. Both my parents are/were musicians, and I began singing and playing the piano at the very early stage. Now I sing at the [Church Choir](http://koorconnection.nl); piano is a hobby I indulge in sometimes.
