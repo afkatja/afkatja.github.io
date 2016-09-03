@@ -4,7 +4,6 @@ title: About
 permalink: /about/
 ---
 
-# About me
 I am Katja Hollaar, 36, from The Hague, the Netherlands. Originally from Ukraine, I moved to the Netherlands in 2003. Here I made a carreer switch from the teacher of Russian language and world literature to web development with an intermezzo of Master of Arts in Communication Science.
 
 I used to be a linguist. I used to research and teach the grammar rules and, most importantly, the philosophy of the language. That fascinated me, the way language reflects the mentality of the people, the way all human languages reflect their common roots and how this fact shows the history of humanity.
