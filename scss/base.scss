@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+    border-top: 5px solid grey;
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-wrap: wrap;
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-title {
+  font-size: 26px;
+  line-height: 56px;
+  margin-bottom: 0;
+  color: #444;
+}
+.top-bar-title {
+  flex: 1 0 auto;
+}
+
+.site-nav {
+    margin-left: auto;
+    line-height: 56px;
+
+    .page-link {
+        color: #444;
+        line-height: 1.2;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+}
+.page-content {
+  flex: 1 0 auto;
+}
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+}

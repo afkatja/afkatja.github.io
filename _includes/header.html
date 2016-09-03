@@ -1,9 +1,14 @@
-<header class="site-header">
-  <nav class="site-nav">
-    {% for page in site.pages %}
-          {% if page.title %}
+<header class="site-header top-bar">
+  <h1 class="top-bar-title">{{ site.title }}</h1>
+  <nav class="site-nav top-bar-right">
+    <ul class="vertical medium-horizontal menu">
+      {% for page in site.pages %}
+        {% if page.title %}
+        <li>
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+        </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
     </nav>
 </header>
