@@ -9,7 +9,7 @@ As a web development who made a shift from studying and teaching human language 
 
 I am extremely interested in projects that have impact via social change and that help make the world a better place.
 
-Ideally, I would love to combine the various skills I possess (language, communication, photography, analytical skills, and web development) in a hybrid role in a multidisciplinary team.
+Ideally, I would love to combine the various skills I possess in a hybrid role in a multidisciplinary team.
 
 ## Languages
 * Russian (Native or bilingual proficiency)
@@ -18,10 +18,10 @@ Ideally, I would love to combine the various skills I possess (language, communi
 * Italian (Limited working proficiency)
 
 ## Skills and expertise
-* CSS, css3
+* css3
 * HTML5
-* javascript
-* User Interface Design
-* Illustrator, Photoshop, InDesign
-* Photography
+* javascript: ES5, ES6, jQuery, vue.js, meteor.js, angular.js
+* build tools: grunt, webpack
+* User Interface Design: Illustrator, Photoshop, InDesign
+* [Photography](https://500px.com/katjahollaar)
 * Usability

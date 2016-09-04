@@ -40,6 +40,29 @@ body {
         }
     }
 }
+
+.projects-list {
+  list-style: none;
+}
+.media-object.project-card {
+  flex-wrap: wrap;
+  .media-object-section {
+    text-align: center;
+    align-items: center;
+    flex: 1 0 300px;
+  }
+  .thumbnail {
+    margin: 0;
+    line-height: normal;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  a {
+    display: block;
+  }
+}
 .page-content {
   flex: 1 0 auto;
 }

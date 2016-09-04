@@ -43,7 +43,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: 1200px;
 $global-lineheight: 1.5;
 $primary-color: #8bad93;
 $secondary-color: #777;
@@ -130,14 +130,14 @@ $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
-$code-padding: rem-calc(2 5 1);
+$code-padding: #{rem-calc(2 5 1)};
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;
-$hr-margin: rem-calc(20) auto;
+$hr-margin: #{rem-calc(20)} auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
@@ -148,14 +148,14 @@ $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 $blockquote-color: $dark-gray;
-$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-padding: #{rem-calc(9 20 0 20)};
 $blockquote-border: 1px solid $medium-gray;
-$cite-font-size: rem-calc(13);
+$cite-font-size: #{rem-calc(12)};
 $cite-color: $dark-gray;
 $keystroke-font: $font-family-monospace;
 $keystroke-color: $black;
 $keystroke-background: $light-gray;
-$keystroke-padding: rem-calc(2 4 0);
+$keystroke-padding: #{rem-calc(2 4 0)};
 $keystroke-radius: $global-radius;
 $abbr-underline: 1px dotted $black;
 
@@ -179,7 +179,7 @@ $abide-labels: true;
 $input-background-invalid: $alert-color;
 $form-label-color-invalid: $alert-color;
 $input-error-color: $alert-color;
-$input-error-font-size: rem-calc(12);
+$input-error-font-size: #{rem-calc(12)};
 $input-error-font-weight: $global-weight-bold;
 
 // 7. Accordion
@@ -214,7 +214,7 @@ $badge-font-size: 0.6rem;
 // ---------------
 
 $breadcrumbs-margin: 0 0 $global-margin 0;
-$breadcrumbs-item-font-size: rem-calc(11);
+$breadcrumbs-item-font-size: #{rem-calc(11)};
 $breadcrumbs-item-color: $primary-color;
 $breadcrumbs-item-color-current: $black;
 $breadcrumbs-item-color-disabled: $medium-gray;

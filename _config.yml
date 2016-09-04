@@ -18,7 +18,8 @@ kramdown:
   input: GFM
 
 collections:
-    - index
+  - index
+  - projects
 
 gems:
   - jekyll-octicons
