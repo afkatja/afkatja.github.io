@@ -1,14 +1,15 @@
 
 <footer class="site-footer">
   <div class="wrapper row">
-    <ul class="contact-list column menu">
+    <ul class="column menu">
       <li>{{ site.description }}</li>
-      <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-    </ul>
-    <ul class="social-media-list column menu">
+      <li><a href="mailto:{{ site.email }}">
+        {% octicon mention %} {{ site.email }}</a>
+      </li>
       {% if site.github_username %}
       <li>
         <a href="https://github.com/{{ site.github_username }}">
+          {% octicon mark-github %}
           <span class="username">{{ site.github_username }}</span>
         </a>
       </li>
@@ -17,7 +18,7 @@
       {% if site.twitter_username %}
       <li>
         <a href="https://twitter.com/{{ site.twitter_username }}">
-
+          {% include twitter-letter-logo.svg %}
           <span class="username">{{ site.twitter_username }}</span>
         </a>
       </li>

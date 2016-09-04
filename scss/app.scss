@@ -9,8 +9,9 @@
 */
 
 @import 'settings';
-@import 'foundation';
-@import 'motion-ui';
+@import '../bower_components/foundation-sites/scss/foundation';
+@import '../bower_components/foundation-sites/scss/util/util';
+//@import 'motion-ui';
 
 @include foundation-everything(true);
 @include foundation-flex-grid;
@@ -51,8 +52,10 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 
-@include motion-ui-transitions;
-@include motion-ui-animations;
+//@include motion-ui-transitions;
+//@include motion-ui-animations;
+
+@import "../node_modules/octicons/index.scss";
 
 /* padding and margins */
 @import "padding-margin";
