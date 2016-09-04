@@ -1,0 +1,10 @@
+---
+layout: home
+title: Projects
+permalink: /projects/
+---
+<ul class="projects-list row">
+  {% for project in site.projects %}
+  <li class="column">{{project}}</li>
+  {% endfor %}
+</ul>
