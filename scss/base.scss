@@ -43,28 +43,51 @@ body {
 
 .projects-list {
   list-style: none;
-}
-.media-object.project-card {
-  flex-wrap: wrap;
-  .media-object-section {
-    text-align: center;
-    align-items: center;
-    flex: 1 0 300px;
+  justify-content: center;
+  li {
+    flex: 0 0 300px;
+    padding: 20px;
   }
-  .thumbnail {
-    margin: 0;
-    line-height: normal;
-    img {
-      max-width: 100%;
-      object-fit: cover;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: $light-gray;
+    margin-right: 1rem;
+    .media-object-section {
+      text-align: center;
+      align-items: center;
+      flex: 1 0 auto;
+      color: $secondary-color;
+      padding-right: 0;
+
     }
-  }
-  a {
-    display: block;
+    .thumbnail {
+      margin: 0;
+      line-height: normal;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      img {
+        height: 200px;
+        max-width: 100%;
+        object-fit: contain;
+        display: inline-block;
+      }
+    }
+    a {
+      display: block;
+    }
   }
 }
 .page-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   flex: 1 0 auto;
+  @include breakpoint(medium only) {
+    max-width: 100%;
+  }
 }
 .site-footer {
   display: flex;

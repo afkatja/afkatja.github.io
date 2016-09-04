@@ -2868,30 +2868,54 @@ body {
       margin-left: 20px; }
 
 .projects-list {
-  list-style: none; }
-
-.media-object.project-card {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  .media-object.project-card .media-object-section {
-    text-align: center;
-    -ms-flex-align: center;
-        -ms-grid-row-align: center;
-        align-items: center;
-    -ms-flex: 1 0 300px;
-        flex: 1 0 300px; }
-  .media-object.project-card .thumbnail {
-    margin: 0;
-    line-height: normal; }
-    .media-object.project-card .thumbnail img {
-      max-width: 100%;
-      object-fit: cover; }
-  .media-object.project-card a {
-    display: block; }
+  list-style: none;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .projects-list li {
+    -ms-flex: 0 0 300px;
+        flex: 0 0 300px;
+    padding: 20px; }
+  .projects-list .project-card {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background: #e6e6e6;
+    margin-right: 1rem; }
+    .projects-list .project-card .media-object-section {
+      text-align: center;
+      -ms-flex-align: center;
+          -ms-grid-row-align: center;
+          align-items: center;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+      color: #777;
+      padding-right: 0; }
+    .projects-list .project-card .thumbnail {
+      margin: 0;
+      line-height: normal;
+      border: none;
+      box-shadow: none;
+      text-align: center; }
+      .projects-list .project-card .thumbnail img {
+        height: 200px;
+        max-width: 100%;
+        object-fit: contain;
+        display: inline-block; }
+    .projects-list .project-card a {
+      display: block; }
 
 .page-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   -ms-flex: 1 0 auto;
       flex: 1 0 auto; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .page-content {
+      max-width: 100%; } }
 
 .site-footer {
   display: -ms-flexbox;
