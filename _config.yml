@@ -20,6 +20,8 @@ kramdown:
 collections:
   - index
   - projects
+  - work
+  - edu
 
 gems:
   - jekyll-octicons
