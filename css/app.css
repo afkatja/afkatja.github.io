@@ -2847,7 +2847,13 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: relative; }
+  position: relative;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    .site-header {
+      width: 100%; } }
 
 .site-title {
   font-size: 26px;
@@ -2954,14 +2960,15 @@ body {
       display: block; }
 
 .page-content {
-  max-width: 1200px;
+  width: 1200px;
+  padding: .5rem;
   margin-left: auto;
   margin-right: auto;
   -ms-flex: 1 0 auto;
       flex: 1 0 auto; }
   @media screen and (min-width: 40em) and (max-width: 63.9375em) {
     .page-content {
-      max-width: 100%; } }
+      width: 100%; } }
 
 .site-footer {
   display: -ms-flexbox;
