@@ -4,15 +4,15 @@ title: Experience
 permalink: /experience/
 ---
 
-* software engineer at _Q42_
+* software engineer at [Q42](//q42.com)
 March 2011 - Present
 front-end development
 
-* Stagiaire Front-End Development at _Occhio_
+* Stagiaire Front-End Development at [Occhio](//occhio.nl)
 November 2010 - February 2011
 Web development using html5, css3, javascript; design and development of mail templates, wordpress themes and templates, templates for CMS
 
-* Creative executive at _VLAM Brand Communications_
+* Creative executive at [VLAM Brand Communications](vlam.nl)
 2010 - October 2010
 Opmaak van diverse grafische uitingen zoals brochures, nieuwsbrieven, visitekaartjes, flyers, posters, etc. Analyse van bestaande websites en verbeteringsvoorstel over informatie architectuur en stijl; wireframes en mock-ups
 Webdesign en ondersteuning bij online mediaconcepten (ontwerp banners, e-letters, restyling, webgraphics)
