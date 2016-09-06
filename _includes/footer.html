@@ -3,14 +3,15 @@
   <div class="wrapper row">
     <ul class="column menu">
       <li>{{ site.description }}</li>
-      <li><a href="mailto:{{ site.email }}">
-        {% octicon mention %} {{ site.email }}</a>
+      <li>
+        <a href="mailto:{{ site.email }}">
+          {{ site.email }}
+        </a>
       </li>
       {% if site.github_username %}
       <li>
         <a href="https://github.com/{{ site.github_username }}">
-          {% octicon mark-github %}
-          <span class="username">{{ site.github_username }}</span>
+          {% include git-icon.svg %} {{ site.github_username }}
         </a>
       </li>
       {% endif %}
@@ -18,8 +19,7 @@
       {% if site.twitter_username %}
       <li>
         <a href="https://twitter.com/{{ site.twitter_username }}">
-          {% include twitter-letter-logo.svg %}
-          <span class="username">{{ site.twitter_username }}</span>
+          {% include twitter-letter-logo.svg %} {{ site.twitter_username }}
         </a>
       </li>
       {% endif %}
