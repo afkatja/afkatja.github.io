@@ -20,8 +20,11 @@ body {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    @include breakpoint(medium only) {
+    @include breakpoint(medium down) {
       width: 100%;
+      a {
+        padding-left: 1rem;
+      }
     }
 }
 
@@ -55,19 +58,22 @@ body {
 .edu-list {
   list-style: none;
   justify-content: center;
-  li {
-    flex: 0 0 300px;
-    padding: 20px;
-  }
+  max-width: 100%;
+  flex-wrap: wrap;
   .project-card,
   .work-card,
   .edu-card {
+    flex: 0 0 350px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     background: $light-gray;
     margin-right: 1rem;
     margin-bottom: 1rem;
+    @include breakpoint(medium down) {
+      margin-right: 0;
+    }
     .media-object-section {
       text-align: center;
       align-items: center;
@@ -101,12 +107,21 @@ body {
   margin-left: auto;
   margin-right: auto;
   flex: 1 0 auto;
-  @include breakpoint(medium only) {
+  @include breakpoint(medium down) {
     width: 100%;
+    padding: .5rem 1.5rem;
   }
 }
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 auto;
+  width: 100%;
+  @include breakpoint(medium down) {
+    .menu {
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
 }
