@@ -2,7 +2,7 @@
   <a href="{{page.href}}" target="_blank">
     <figure class="thumbnail">
       <img src="{{page.img}}">
-      <figcaption>{{page.title}}</figcaption>
+      <figcaption>{{page.title}} {% unless page.href %}(not yet live){% endunless %}</figcaption>
     </figure>
   </a>
 </div>
