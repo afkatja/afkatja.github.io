@@ -1,5 +1,3 @@
-@import '_settings';
-
 html, body {
   height: 100%;
 }
@@ -7,51 +5,69 @@ body {
   display: flex;
   flex-direction: column;
 }
+a {
+  color: $primary-color;
+}
 
 .site-header {
-    border-top: 5px solid $primary-color;
-    border-bottom: 1px solid $primary-color;
-    margin-bottom: 1rem;
-    flex: 0 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    // Positioning context for the mobile navigation icon
-    position: relative;
+  border-top: 5px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  margin-bottom: 1rem;
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  .site-nav {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: .5rem 1.5rem;margin-left: auto;
+
+    .page-link {
+      color: #444;
+      line-height: 1.2;
+      transition: color .3s linear;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+
+      // Gaps between nav items, but not on the first one
+      &:not(:first-child) {
+          margin-left: 20px;
+      }
+      &.top-bar-title {
+        font-size: 3rem;
+        font-weight: 200;
+        font-family: "Raleway", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        color: $primary-color;
+        padding-left: 0;
+        &:hover,
+        &:focus {
+          text-shadow: 0 -1px 0 rgba(0,0,0, .2);
+        }
+      }
+    }
+    li.active a {
+      background-color: $primary-color;
+      color: #fff;
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
     @include breakpoint(medium down) {
       width: 100%;
       a {
         padding-left: 1rem;
       }
     }
+  }
 }
 
-.site-title {
-  font-size: 26px;
-  line-height: 56px;
-  margin-bottom: 0;
-  color: #444;
-}
-.top-bar-title {
-  flex: 1 0 auto;
-}
-
-.site-nav {
-    margin-left: auto;
-    line-height: 56px;
-
-    .page-link {
-        color: #444;
-        line-height: 1.2;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-}
 
 .projects-list,
 .work-list,
@@ -68,7 +84,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background: $light-gray;
+    background: $light-green;
     margin-right: 1rem;
     margin-bottom: 1rem;
     @include breakpoint(medium down) {
@@ -113,14 +129,22 @@ body {
   }
 }
 
+figure.flex-img {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
   flex: 0 0 auto;
   width: 100%;
+  .menu {
+    padding: .5rem 1.5rem;
+  }
   @include breakpoint(medium down) {
     .menu {
-      flex-direction: column;
       flex-wrap: wrap;
     }
   }

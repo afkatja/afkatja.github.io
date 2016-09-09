@@ -2,6 +2,13 @@
 layout: home
 permalink: /
 ---
+{::nomarkdown}
+<figure class="flex-img">
+{:/}
+![katja]({{site.baseurl}}/assets/katja.jpg){:width="400"}
+{::nomarkdown}
+</figure>
+{:/}
 
 Eager to learn, motivated and creative web developer and web designer with understanding of usability, accessibility and style, clean code and beautiful, modern web solutions.
 
