@@ -133,6 +133,19 @@ figure.flex-img {
   display: flex;
   justify-content: center;
   margin: 0;
+  p {
+    border-radius: 100%;
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    img {
+      max-width: none;
+      position: absolute;
+      right: -40px;
+      top: 0;
+    }
+  }
 }
 
 .site-footer {

@@ -5,7 +5,7 @@ permalink: /
 {::nomarkdown}
 <figure class="flex-img">
 {:/}
-![katja]({{site.baseurl}}/assets/katja.jpg){:width="400"}
+![katja]({{site.baseurl}}/assets/katja.jpg){:width="450"}
 {::nomarkdown}
 </figure>
 {:/}
