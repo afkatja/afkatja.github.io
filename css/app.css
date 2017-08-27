@@ -2715,6 +2715,9 @@ body {
 a {
   color: #009688; }
 
+p:empty {
+  margin-bottom: 0; }
+
 .site-header {
   border-top: 5px solid #009688;
   border-bottom: 1px solid #009688;
@@ -2729,11 +2732,10 @@ a {
   padding-left: 0;
   padding-right: 0; }
   .site-header .site-nav {
-    width: 1200px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: .5rem 1.5rem;
-    margin-left: auto; }
+    padding: .5rem 1.5rem; }
     .site-header .site-nav .menu {
       -ms-flex-align: center;
           -ms-grid-row-align: center;
@@ -2860,7 +2862,7 @@ a {
       display: block; }
 
 .page-content {
-  width: 1200px;
+  max-width: 1200px;
   padding: .5rem;
   margin-left: auto;
   margin-right: auto;
@@ -2889,16 +2891,27 @@ figure.flex-img {
       right: -40px;
       top: 0; }
 
+figure.alignleft {
+  float: left;
+  margin-right: 20px; }
+
 .site-footer {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex: 0 0 auto;
       flex: 0 0 auto;
   width: 100%; }
   .site-footer .menu {
-    padding: .5rem 1.5rem; }
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 1.5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
   @media screen and (max-width: 63.9375em) {
     .site-footer .menu {
       -ms-flex-wrap: wrap;
