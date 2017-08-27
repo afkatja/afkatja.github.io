@@ -9,9 +9,9 @@
 <div class="media-object-section">
   <h4>{{page.title}}</h4>
   <p>{{page.description}}</p>
-  <ul class="techniques">
-    {% for tech in page.techniques %}
-    <li>{% include {{tech}}.svg %}</li>
-    {% endfor %}
-  </ul>
 </div>
+<ul class="techniques">
+  {% for tech in page.techniques %}
+  <li>{% include {{tech}}.svg %}</li>
+  {% endfor %}
+</ul>
