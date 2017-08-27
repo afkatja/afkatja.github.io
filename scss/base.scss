@@ -25,7 +25,9 @@ a {
     margin-left: auto;
     margin-right: auto;
     padding: .5rem 1.5rem;margin-left: auto;
-
+    .menu {
+      align-items: center;
+    }
     .page-link {
       color: #444;
       line-height: 1.2;
@@ -45,6 +47,7 @@ a {
         font-family: "Raleway", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
         color: $primary-color;
         padding-left: 0;
+        margin: 0;
         &:hover,
         &:focus {
           text-shadow: 0 -1px 0 rgba(0,0,0, .2);

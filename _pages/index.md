@@ -27,7 +27,7 @@ Ideally, I would love to combine the various skills I possess in a hybrid role i
 ## Skills and expertise
 * css3
 * HTML5
-* javascript: ES5, ES6, jQuery, vue.js, meteor.js, angular.js
+* javascript: ES5, ES6, jQuery, reactjs, vuejs, meteorjs, angularjs
 * build tools: grunt, webpack
 * User Interface Design: Illustrator, Photoshop, InDesign
 * [Photography](https://500px.com/katjahollaar)
