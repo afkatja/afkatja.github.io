@@ -1,7 +1,7 @@
 {
   "name": "foundation-sites-template",
-  "version": "1.0.0",
-  "description": "Basic template for a new Foundation for Sites project.",
+  "version": "1.0.1",
+  "description": "Personal portfolio based on Foundation sites.",
   "main": "gulpfile.js",
   "devDependencies": {
     "foundation-sites": "^6.4.3",
@@ -25,7 +25,7 @@
     "url": "https://github.com/zurb/foundation-sites/issues",
     "email": "foundation@zurb.com"
   },
-  "author": "ZURB <foundation@zurb.com>",
+  "author": "Katja Hollaar",
   "license": "MIT",
   "private": true,
   "dependencies": {
