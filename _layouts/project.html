@@ -12,6 +12,6 @@
 </div>
 <ul class="techniques">
   {% for tech in page.techniques %}
-  <li>{% include {{tech}}.svg %}</li>
+  <li title="{{tech}}">{% include {{tech}}.svg %}</li>
   {% endfor %}
 </ul>
