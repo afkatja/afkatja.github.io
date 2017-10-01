@@ -12,7 +12,9 @@ permalink: /
 
 I am an eager to learn, motivated and creative web developer with thorough understanding of usability, accessibility and style, clean code and beautiful, modern and elegant web solutions.
 
-I am a web developer who made a shift from studying and teaching human language as a means of communication from linguistic, social and artistic points of view. I am also a passionate and inquisitive gooder always learning new (both human and programming) languages and techniques.
+I am a developer who made a shift from studying and teaching human language as a means of communication from linguistic, social and artistic points of view to learning and using programming languages as a means of communication. Originally, I was trained in teaching languages and literature at school. After a while I came to understanding language in its philosophical broad sense of a means of communication. One of the examples of this “language” was photography and film.
+
+I am also a passionate and inquisitive gooder always learning new (both human and programming) languages and techniques.
 
 Together with other co-founders of [Girl Code](http://girl-code.nl), I also try to inspire and mentor others by organizing the [regular events](http://meetup.com/girlcode), helping underrepresented groups to enter or stay in the field of programming.
 
