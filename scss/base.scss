@@ -8,6 +8,9 @@ body {
 a {
   color: $primary-color;
 }
+p:empty {
+  margin-bottom: 0;
+}
 
 .site-header {
   border-top: 5px solid $primary-color;
@@ -21,11 +24,13 @@ a {
   padding-left: 0;
   padding-right: 0;
   .site-nav {
-    width: 1200px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding: .5rem 1.5rem;margin-left: auto;
-
+    padding: .5rem 1.5rem;
+    .menu {
+      align-items: center;
+    }
     .page-link {
       color: #444;
       line-height: 1.2;
@@ -45,6 +50,7 @@ a {
         font-family: "Raleway", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
         color: $primary-color;
         padding-left: 0;
+        margin: 0;
         &:hover,
         &:focus {
           text-shadow: 0 -1px 0 rgba(0,0,0, .2);
@@ -84,6 +90,7 @@ a {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: flex-start;
     background: $light-green;
     margin-right: 1rem;
     margin-bottom: 1rem;
@@ -92,8 +99,6 @@ a {
     }
     .media-object-section {
       text-align: center;
-      align-items: center;
-      flex: 1 0 auto;
       color: $secondary-color;
       padding-right: 0;
 
@@ -118,7 +123,7 @@ a {
 }
 
 .page-content {
-  width: 1200px;
+  max-width: 1200px;
   padding: .5rem;
   margin-left: auto;
   margin-right: auto;
@@ -129,32 +134,43 @@ a {
   }
 }
 
-figure.flex-img {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  p {
-    border-radius: 100%;
-    overflow: hidden;
-    height: 300px;
-    width: 300px;
-    position: relative;
-    img {
-      max-width: none;
-      position: absolute;
-      right: -40px;
-      top: 0;
+figure {
+  &.flex-img {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    p {
+      border-radius: 100%;
+      overflow: hidden;
+      height: 300px;
+      width: 300px;
+      position: relative;
+      img {
+        max-width: none;
+        position: absolute;
+        right: -40px;
+        top: 0;
+      }
     }
+  }
+  &.alignleft {
+    float: left;
+    margin-right: 20px;
   }
 }
 
 .site-footer {
-  display: flex;
-  flex-wrap: wrap;
   flex: 0 0 auto;
   width: 100%;
   .menu {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     padding: .5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   @include breakpoint(medium down) {
     .menu {

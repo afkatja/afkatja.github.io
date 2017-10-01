@@ -46,7 +46,7 @@
 //@include motion-ui-transitions;
 //@include motion-ui-animations;
 
-@import "../node_modules/octicons/index.scss";
+@import "../node_modules/octicons/build/octicons.css";
 
 /* padding and margins */
 //@import "padding-margin";
@@ -54,3 +54,4 @@
 /* custom */
 @import "custom";
 @import 'base';
+@import "projects";
