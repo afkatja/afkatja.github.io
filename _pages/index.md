@@ -16,7 +16,7 @@ I am a developer who made a shift from studying and teaching human language as a
 
 I am also a passionate and inquisitive gooder always learning new (both human and programming) languages and techniques.
 
-Together with other co-founders of [Girl Code](http://girl-code.nl), I also try to inspire and mentor others by organizing the [regular events](http://meetup.com/girlcode), helping underrepresented groups to enter or stay in the field of programming.
+As a co-founder of [Girl Code](http://girl-code.nl), I also try to inspire and mentor others by organizing the [regular events](http://meetup.com/girlcode), helping underrepresented groups to enter or stay in the field of programming. We strive for more diversity and equality in IT. Our mission is to inspire and motivate women and build up a community of the same thinkers who understand and support each other.
 
 I believe I can be a real asset in a multidisciplinary team offering new ideas and insights to help solve problems in creative and user friendly ways. I am extremely interested in projects that have impact via social change and that help make the world a better place.
 
@@ -36,8 +36,9 @@ I believe I can be a real asset in a multidisciplinary team offering new ideas a
 
 ## Hobbies
 * [Photography](https://500px.com/katjahollaar)
-* singing and playing piano
+* [traveling](https://www.flickr.com/photos/katja_cmd/) and [traveling](https://www.polarsteps.com/afkatja)
+* singing ([Koor Connection](http://koorconnection.nl/) and [Kwintessens](http://kamerkoorkwintessens.nl/))
+* playing piano
 * Italian language
-* traveling
 * [reading](https://www.goodreads.com/user/show/4241716-katja)
 * films
