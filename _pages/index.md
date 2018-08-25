@@ -35,10 +35,10 @@ I believe I can be a real asset in a multidisciplinary team offering new ideas a
 * Usability
 
 ## Hobbies
-* [Photography](https://500px.com/katjahollaar)
-* [traveling](https://www.flickr.com/photos/katja_cmd/) and [traveling](https://www.polarsteps.com/afkatja)
-* singing ([Koor Connection](http://koorconnection.nl/) and [Kwintessens](http://kamerkoorkwintessens.nl/))
-* playing piano
+* [Photography](https://500px.com/katjahollaar), [photo trips](https://www.flickr.com/photos/katja_cmd/) and [snapshots](https://www.instagram.com/katjahollaar/)
+* [Traveling](https://www.polarsteps.com/afkatja)
+* Singing ([Koor Connection](http://koorconnection.nl/) and [Kwintessens](http://kamerkoorkwintessens.nl/))
 * Italian language
-* [reading](https://www.goodreads.com/user/show/4241716-katja)
+* Playing piano
+* [Reading](https://www.goodreads.com/user/show/4241716-katja)
 * films
