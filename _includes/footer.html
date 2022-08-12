@@ -1,11 +1,10 @@
-
 <footer class="site-footer">
   <ul class="vertical medium-horizontal menu">
-    <li>{{ site.description }}</li>
     <li>
-      <a href="mailto:{{ site.email }}">
-        {{ site.email }}
-      </a>
+      <a href="https://katjahollaar.myportfolio.com/">{{ site.description }}</a>
+    </li>
+    <li>
+      <a href="mailto:{{ site.email }}"> {{ site.email }} </a>
     </li>
     {% if site.github_username %}
     <li>
@@ -13,12 +12,10 @@
         {% include git-icon.svg %} {{ site.github_username }}
       </a>
     </li>
-    {% endif %}
-
-    {% if site.twitter_username %}
+    {% endif %} {% if site.twitter_username %}
     <li>
-      <a href="https://twitter.com/{{ site.twitter_username }}">
-        {% include twitter-letter-logo.svg %} {{ site.twitter_username }}
+      <a href="https://www.instagram.com/{{site.instagram_username}}/">
+        {% include instagram.svg %} Instagram
       </a>
     </li>
     {% endif %}

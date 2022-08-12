@@ -2,7 +2,9 @@
 layout: home
 permalink: /
 ---
+
 {::nomarkdown}
+
 <figure class="flex-img">
 {:/}
 ![katja]({{site.baseurl}}/assets/katja.jpg){:width="450"}
@@ -21,24 +23,23 @@ As a co-founder of [Girl Code](http://girl-code.nl), I also try to inspire and m
 I believe I can be a real asset in a multidisciplinary team offering new ideas and insights to help solve problems in creative and user friendly ways. I am extremely interested in projects that have impact via social change and that help make the world a better place.
 
 ## Languages
-* Russian (Native or bilingual proficiency)
-* Dutch (Native or bilingual proficiency)
-* English (Professional working proficiency)
-* Italian (Limited working proficiency)
+
+- Russian (Native or bilingual proficiency)
+- Dutch (Native or bilingual proficiency)
+- English (Professional working proficiency)
+- Italian (Limited working proficiency)
 
 ## Skills and expertise
-* css3
-* HTML5
-* javascript: ES6, jQuery, reactjs, vuejs, meteorjs, angularjs
-* build tools: grunt, webpack
-* User Interface Design: Illustrator, Photoshop, InDesign
-* Usability
+
+- css3
+- HTML5
+- javascript: ES6, jQuery, reactjs, vuejs, meteorjs, angularjs
+- build tools: grunt, webpack
+- User Interface Design: Illustrator, Photoshop, InDesign
+- Usability
 
 ## Hobbies
-* [Photography](https://500px.com/katjahollaar), [photo trips](https://www.flickr.com/photos/katja_cmd/) and [snapshots](https://www.instagram.com/katjahollaar/)
-* [Traveling](https://www.polarsteps.com/afkatja)
-* Singing ([Koor Connection](http://koorconnection.nl/) and [Kwintessens](http://kamerkoorkwintessens.nl/))
-* Italian language
-* Playing piano
-* [Reading](https://www.goodreads.com/user/show/4241716-katja)
-* films
+
+- [Photography](https://500px.com/katjahollaar), [photo trips](https://www.flickr.com/photos/katja_cmd/) and [examples](https://www.instagram.com/katjahollaar/)
+- [Traveling](https://www.polarsteps.com/afkatja)
+- [Reading](https://www.goodreads.com/user/show/4241716-katja)

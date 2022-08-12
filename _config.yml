@@ -2,23 +2,26 @@
 title: Katja Hollaar
 email: afkatja@gmail.com
 description: >
-  Personal portfolio page
+  Personal page
 baseurl:
 url: "http://afkatja.github.io"
 twitter_username: afkatja
-github_username:  afkatja
+github_username: afkatja
+instagram_username: katjahollaar
 permalink: /blog/:year/:title/
 
-
 # Build settings
-include: ['_pages']
-exclude: ["vendor",
-          "_assets",
-          "Gemfile",
-          "Gemfile.lock",
-          "gulpfile.js",
-          "node_modules",
-          "package.json"]
+include: ["_pages"]
+exclude:
+  [
+    "vendor",
+    "_assets",
+    "Gemfile",
+    "Gemfile.lock",
+    "gulpfile.js",
+    "node_modules",
+    "package.json",
+  ]
 kramdown:
   input: GFM
 
