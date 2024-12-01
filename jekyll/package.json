@@ -1,0 +1,37 @@
+{
+  "name": "foundation-sites-template",
+  "version": "1.0.1",
+  "description": "Personal portfolio based on Foundation sites.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "foundation-sites": "^6.4.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-run": "^1.7.1",
+    "gulp-sass": "^2.1.0",
+    "gulp-util": "^3.0.8",
+    "octicons": "^6.0.1"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zurb/foundation-sites-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zurb/foundation-sites/issues",
+    "email": "foundation@zurb.com"
+  },
+  "author": "Katja Hollaar",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "foundation": "^4.2.1-1",
+    "gulp-autoprefixer": "^3.1.0",
+    "node-sass": "^4.5.3"
+  }
+}

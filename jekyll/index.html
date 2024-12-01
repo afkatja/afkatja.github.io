@@ -1,0 +1,18 @@
+---
+layout: home
+---
+
+<main class="page-content">
+  <div class="wrapper">
+    <div class="home">
+      {{site.index}}
+      <div class="post">
+        {% for index in site.index %}
+          <article class="post-content">
+            {{ index.content | markdownify }}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>

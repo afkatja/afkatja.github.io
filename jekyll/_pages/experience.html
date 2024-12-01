@@ -1,0 +1,11 @@
+---
+layout: home
+title: Experience
+permalink: /experience/
+---
+
+<ul class="work-list row">
+  {% for work in site.work  %}
+  <li class="work-card">{{ work }}</li>
+  {% endfor %}
+</ul>

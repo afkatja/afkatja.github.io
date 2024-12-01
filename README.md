@@ -1,12 +1,38 @@
-# afkatja.github.io
-Personal page
+# Deploying to GitHub Pages
 
-## Setup
+This example supports deploying a statically exported Next.js application to GitHub Pages.
 
-- run `npm install`
-- check for `gem` and run `gem update`
-- check for `gulp`
-- check for `bundler`
+The `out` directory should not be ignored by version control.
 
-## Running
-- run `npm start` for development build with live updates
+## How to use
+
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+
+```bash
+npx create-next-app --example github-pages github-pages-app
+```
+
+```bash
+yarn create next-app --example github-pages github-pages-app
+```
+
+```bash
+pnpm create next-app --example github-pages github-pages-app
+```
+
+### Deploy to GitHub Pages
+
+1.  Create a new public GitHub repository.
+1.  Edit `next.config.js` to match your GitHub repository name:
+    - Given the pattern `https://github.com/<user>/<repo>`, update your `basePath` config to `/repo`.
+1.  Push the starter code to the `main` branch.
+1.  Run the `deploy` script (e.g. `npm run deploy`) to create the `gh-pages` branch.
+1.  On GitHub, go to **Settings** > **Pages** > **Branch**, and choose `gh-pages` as the branch with the `/root` folder. Hit **Save**.
+1.  Make a change.
+1.  Run the `deploy` script again to push the changes to GitHub Pages.
+
+Congratulations! You should have a URL like:
+
+```bash
+https://<github-user-name>.github.io/<github-project-name>/
+```

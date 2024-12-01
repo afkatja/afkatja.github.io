@@ -1,37 +1,24 @@
 {
-  "name": "foundation-sites-template",
-  "version": "1.0.1",
-  "description": "Personal portfolio based on Foundation sites.",
-  "main": "gulpfile.js",
-  "devDependencies": {
-    "foundation-sites": "^6.4.3",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-run": "^1.7.1",
-    "gulp-sass": "^2.1.0",
-    "gulp-util": "^3.0.8",
-    "octicons": "^6.0.1"
-  },
-  "scripts": {
-    "start": "gulp",
-    "build": "gulp sass"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zurb/foundation-sites-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/zurb/foundation-sites/issues",
-    "email": "foundation@zurb.com"
-  },
-  "author": "Katja Hollaar",
-  "license": "MIT",
   "private": true,
+  "scripts": {
+    "dev": "next dev -p 8080",
+    "build": "next build",
+    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+  },
   "dependencies": {
-    "browser-sync": "^2.18.13",
-    "foundation": "^4.2.1-1",
-    "gulp-autoprefixer": "^3.1.0",
-    "node-sass": "^4.5.3"
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^18.11.5",
+    "@types/react": "^18.0.23",
+    "@types/react-dom": "^18.0.7",
+    "motion": "^11.12.0",
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0",
+    "react-markdown": "^9.0.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
   }
 }

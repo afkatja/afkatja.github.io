@@ -1,0 +1,180 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: $primary-color;
+}
+p:empty {
+  margin-bottom: 0;
+}
+
+.site-header {
+  border-top: 5px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  margin-bottom: 1rem;
+  flex: 0 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  // Positioning context for the mobile navigation icon
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  .site-nav {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 1.5rem;
+    .menu {
+      align-items: center;
+    }
+    .page-link {
+      color: #444;
+      line-height: 1.2;
+      transition: color .3s linear;
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+
+      // Gaps between nav items, but not on the first one
+      &:not(:first-child) {
+          margin-left: 20px;
+      }
+      &.top-bar-title {
+        font-size: 3rem;
+        font-weight: 200;
+        font-family: "Raleway", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        color: $primary-color;
+        padding-left: 0;
+        margin: 0;
+        &:hover,
+        &:focus {
+          text-shadow: 0 -1px 0 rgba(0,0,0, .2);
+        }
+      }
+    }
+    li.active a {
+      background-color: $primary-color;
+      color: #fff;
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+    @include breakpoint(medium down) {
+      width: 100%;
+      a {
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
+
+.projects-list,
+.work-list,
+.edu-list {
+  list-style: none;
+  justify-content: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  .project-card,
+  .work-card,
+  .edu-card {
+    flex: 0 0 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    background: $light-green;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    @include breakpoint(medium down) {
+      margin-right: 0;
+    }
+    .media-object-section {
+      text-align: center;
+      color: $secondary-color;
+      padding-right: 0;
+
+    }
+    .thumbnail {
+      margin: 0;
+      line-height: normal;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+      img {
+        height: 200px;
+        max-width: 100%;
+        object-fit: contain;
+        display: inline-block;
+      }
+    }
+    a {
+      display: block;
+    }
+  }
+}
+
+.page-content {
+  max-width: 1200px;
+  padding: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  flex: 1 0 auto;
+  @include breakpoint(medium down) {
+    width: 100%;
+    padding: .5rem 1.5rem;
+  }
+}
+
+figure {
+  &.flex-img {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    p {
+      border-radius: 100%;
+      overflow: hidden;
+      height: 300px;
+      width: 300px;
+      position: relative;
+      img {
+        max-width: none;
+        position: absolute;
+        right: -40px;
+        top: 0;
+      }
+    }
+  }
+  &.alignleft {
+    float: left;
+    margin-right: 20px;
+  }
+}
+
+.site-footer {
+  flex: 0 0 auto;
+  width: 100%;
+  .menu {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: .5rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  @include breakpoint(medium down) {
+    .menu {
+      flex-wrap: wrap;
+    }
+  }
+}
