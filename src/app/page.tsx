@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import Markdown from "react-markdown"
 
-const home = `# Web Developer | Digital Solution Architect | Wildlife Photographer | Perpetual Learner
+const home = `# Web Developer | Digital Solutions Architect | Wildlife Photographer | Perpetual Learner
 
 From the intricate syntax of human languages to the elegant structures of programming languages, my journey has been defined by curiosity and adaptation. A former linguist turned web developer, I crafted the comprehensive web application for GreenWheels.nl before trading European tech scenes for the vibrant tropical forests of Costa Rica.
 
@@ -12,9 +12,23 @@ When not writing code or tracking rare birds through the Costa Rican jungle, you
 
 export default function Home() {
   return (
-    <article className="prose mx-auto py-5">
-      <Image src="/katja.jpg" alt="katja" width={800} height={500} />
-      <Markdown>{home}</Markdown>
+    <article className="prose mx-auto py-5 grid grid-cols-2">
+      <Image
+        src="/katja.jpg"
+        alt="katja"
+        width={800}
+        height={500}
+        className="m-0"
+      />
+      <div className="bg-gradient-to-br from-blue-500 to-green-400 p-10 text-white">
+        <Link
+          href="/contact"
+          className="text-3xl font-bold text-white no-underline hover:animate-pulse"
+        >
+          Let's Connect
+        </Link>
+      </div>
+      <Markdown className="col-span-2 my-10">{home}</Markdown>
     </article>
   )
 }
