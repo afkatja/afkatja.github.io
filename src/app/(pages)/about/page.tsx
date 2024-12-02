@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Markdown from "react-markdown"
+import PagesLayout from "../pagesLayout"
 
 const about = `# My Journey: Code, Creativity, and Continuous Growth
 
@@ -36,8 +37,8 @@ The most empowering aspect of web development? The ability to transform abstract
 
 export default function About() {
   return (
-    <article className="prose mx-auto py-5">
+    <PagesLayout>
       <Markdown>{about}</Markdown>
-    </article>
+    </PagesLayout>
   )
 }
