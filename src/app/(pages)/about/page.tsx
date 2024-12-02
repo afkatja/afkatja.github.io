@@ -34,10 +34,11 @@ The most empowering aspect of web development? The ability to transform abstract
 
 > In code, as in life, the journey is about continuous learning, embracing challenges, and creating something meaningful.`
 
-export default function About() {
+const About = () => {
   return (
     <PagesLayout>
       <Markdown>{about}</Markdown>
     </PagesLayout>
   )
 }
+export default About

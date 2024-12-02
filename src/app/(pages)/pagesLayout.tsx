@@ -1,6 +1,6 @@
 import React from "react"
 
-const PagesLayout = async ({
+const PagesLayout = ({
   children,
   className,
 }: {

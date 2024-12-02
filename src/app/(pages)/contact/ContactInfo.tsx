@@ -8,11 +8,9 @@ import {
 } from "react-icons/ai"
 import decryptStrings from "./encryption"
 
-const ContactInfo = async () => {
-  const email = "afkatja@gmail.com"
-  const phoneNumber = "+50687495341"
-  const decryptedEmail = await decryptStrings(email)
-  const decryptedPhone = await decryptStrings(phoneNumber)
+const ContactInfo = () => {
+  const email = btoa("afkatja@gmail.com")
+  const phoneNumber = btoa("+50687495341")
 
   return (
     <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-green-400 p-10 text-neutral-100 dark:from-blue-900 dark:to-green-700">
@@ -26,10 +24,10 @@ const ContactInfo = async () => {
         <div className="flex items-center">
           <AiOutlineMail className="mr-4" />
           <Link
-            href={`mailto:${decryptedEmail}`}
+            href={`mailto:${atob(email)}`}
             className="no-underline text-white hover:animate-pulse"
           >
-            {decryptedEmail}
+            {atob(email)}
           </Link>
         </div>
         <div className="flex items-center">
@@ -37,10 +35,10 @@ const ContactInfo = async () => {
           /
           <AiOutlineWhatsApp className="mx-2" />
           <Link
-            href={`tel:${decryptedPhone}`}
+            href={`tel:${atob(phoneNumber)}`}
             className="no-underline text-white hover:animate-pulse"
           >
-            {decryptedPhone}
+            {atob(phoneNumber)}
           </Link>
         </div>
         <div className="flex items-center">

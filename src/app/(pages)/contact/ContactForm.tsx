@@ -8,7 +8,7 @@ const ContactForm = () => {
     message: "",
   })
 
-  const handleChange = e => {
+  const handleChange: (e: any) => void = e => {
     const { name, value } = e.target
     setFormData(prevState => ({
       ...prevState,
@@ -16,7 +16,7 @@ const ContactForm = () => {
     }))
   }
 
-  const handleSubmit = e => {
+  const handleSubmit: (e: any) => void = e => {
     e.preventDefault()
     // TODO: Add form submission logic
     alert("Message submitted! I will get back to you soon.")
