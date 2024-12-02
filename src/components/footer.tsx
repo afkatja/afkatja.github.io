@@ -10,16 +10,21 @@ import {
 } from "react-icons/ai"
 
 const links = [
-  {
-    name: "portfolio",
-    href: "https://katjahollaar.myportfolio.com/",
-    icon: AiOutlineCamera,
-  },
   { name: "email", href: "mailto:", icon: AiOutlineMail },
   {
     name: "github",
     href: "https://github.com/afkatja",
     icon: AiOutlineGithub,
+  },
+  {
+    name: "linkedin",
+    href: "https://www.linkedin.com/in/katjahollaar/",
+    icon: AiOutlineLinkedin,
+  },
+  {
+    name: "photography",
+    href: "https://katjahollaar.myportfolio.com/",
+    icon: AiOutlineCamera,
   },
   {
     name: "instagram",
@@ -30,11 +35,6 @@ const links = [
     name: "facebook",
     href: "http://facebook.com/katja.hollaar",
     icon: AiOutlineFacebook,
-  },
-  {
-    name: "linkedin",
-    href: "https://www.linkedin.com/in/katjahollaar/",
-    icon: AiOutlineLinkedin,
   },
 ]
 
