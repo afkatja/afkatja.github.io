@@ -12,7 +12,7 @@ When not writing code or tracking rare birds through the Costa Rican jungle, you
 
 export default function Home() {
   return (
-    <article className="prose dark:prose-invert prose-neutral mx-auto py-5 grid grid-cols-2 text-neutral-900 dark:text-neutral-100">
+    <article className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 text-neutral-900 dark:text-neutral-100">
       <Image
         src="/katja.jpg"
         alt="katja"

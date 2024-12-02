@@ -53,10 +53,10 @@ const workPlaces: IWorkPlace[] = [
 const Experience = () => {
   return (
     <article className="prose w-full mx-auto max-w-none py-5">
-      <ul className="grid grid-cols-4 gap-5 list-none">
+      <ul className="md:grid grid-cols-4 gap-5 list-none p-0">
         {workPlaces.map(place => (
           <li
-            className="rounded-lg shadow-lg p-6 m-0 bg-neutral-200 dark:bg-neutral-600"
+            className="rounded-lg shadow-lg p-6 my-5 mx-0 md:m-0 bg-neutral-200 dark:bg-neutral-800"
             key={crypto.randomUUID()}
           >
             <Link
@@ -64,7 +64,7 @@ const Experience = () => {
               target="_blank"
               className="no-underline  text-neutral-900 dark:text-neutral-100"
             >
-              <h3 className="text-xl font-bold mt-4  text-neutral-900 dark:text-neutral-100">
+              <h3 className="text-xl font-bold mt-4 text-neutral-900 dark:text-neutral-100">
                 {place.function}
               </h3>
               {place.icon && (

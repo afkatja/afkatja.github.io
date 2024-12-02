@@ -40,8 +40,8 @@ const links = [
 
 const footer = () => {
   return (
-    <footer className="site-footer  mt-8 py-5 bg-neutral-200 dark:bg-neutral-600 text-neutral-900 dark:text-neutral-100">
-      <ul className="grid grid-cols-6 gap-3 mx-auto justify-center w-11/12">
+    <footer className="site-footer mt-8 py-5 bg-neutral-200 dark:bg-neutral-600 text-neutral-900 dark:text-neutral-100">
+      <ul className="grid md:grid-cols-6 grid-cols-3 gap-3 mx-auto justify-center w-11/12">
         {links.map(({ href, name, icon }) => {
           const Icon = icon
           return (

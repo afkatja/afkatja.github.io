@@ -66,7 +66,7 @@ const projects: ProjectCardProps[] = [
 
 const Projects = () => {
   return (
-    <div className="grid grid-wrap grid-cols-4 gap-5 prose max-w-none dark:prose-invert prose-neutral py-5">
+    <div className="md:grid grid-cols-4 gap-5 prose max-w-none dark:prose-invert prose-neutral py-5">
       {projects.map(project => (
         <ProjectCard key={crypto.randomUUID()} {...project} />
       ))}

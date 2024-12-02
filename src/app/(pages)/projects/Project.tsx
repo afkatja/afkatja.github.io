@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className={`bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 project-card rounded-lg shadow-lg p-6 ${
+      className={`bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 project-card rounded-lg shadow-lg p-6 my-5 mx-0 md:m-0 ${
         highlight ? "col-span-4" : ""
       }`}
     >
