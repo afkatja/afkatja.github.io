@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <div
-      className={`project-card rounded-lg shadow-lg p-6 ${
+      className={`bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 project-card rounded-lg shadow-lg p-6 ${
         highlight ? "col-span-4" : ""
       }`}
     >
@@ -37,12 +37,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       )}
       <h3 className="text-xl font-bold mt-4">{title}</h3>
-      <p className="text-gray-600 mt-2">{description}</p>
+      <p className="mt-2">{description}</p>
       <div className="technologies mt-4">
         {technologies.map(tech => (
           <span
             key={tech}
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm mr-2 mb-2"
+            className="inline-block bg-neutral-200 dark:bg-neutral-400 text-neutral-700 dark:text-neutral-100 rounded-full px-3 py-1 text-sm mr-2 mb-2"
           >
             {tech}
           </span>
@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <Link
             href={githubLink}
             target="_blank"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 dark:text-blue-100 hover:underline"
           >
             GitHub
           </Link>
@@ -62,7 +62,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <Link
             href={liveLink}
             target="_blank"
-            className="text-green-600 hover:underline"
+            className="text-blue-600 dark:text-blue-100 no-underline hover:underline"
           >
             Live Site
           </Link>

@@ -15,7 +15,7 @@ const ContactInfo = async () => {
   const decryptedPhone = await decryptStrings(phoneNumber)
 
   return (
-    <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-green-400 p-10 text-white">
+    <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-green-400 p-10 text-neutral-100 dark:from-blue-900 dark:to-green-700">
       <h2 className="text-3xl font-bold mb-6 text-white">Let's Connect</h2>
       <p className="mb-6">
         Interested in collaborating or have a project in mind? I'm always open

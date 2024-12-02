@@ -52,15 +52,21 @@ const workPlaces: IWorkPlace[] = [
 
 const Experience = () => {
   return (
-    <article className="prose w-full mx-auto max-w-none">
-      <ul className="work-list row grid grid-cols-4 gap-3">
+    <article className="prose w-full mx-auto max-w-none py-5">
+      <ul className="grid grid-cols-4 gap-5 list-none">
         {workPlaces.map(place => (
           <li
-            className="work-card rounded-lg shadow-lg p-6"
+            className="rounded-lg shadow-lg p-6 m-0 bg-neutral-200 dark:bg-neutral-600"
             key={crypto.randomUUID()}
           >
-            <Link href={place.href} target="_blank" className="no-underline">
-              <h3 className="text-xl font-bold mt-4">{place.function}</h3>
+            <Link
+              href={place.href}
+              target="_blank"
+              className="no-underline  text-neutral-900 dark:text-neutral-100"
+            >
+              <h3 className="text-xl font-bold mt-4  text-neutral-900 dark:text-neutral-100">
+                {place.function}
+              </h3>
               {place.icon && (
                 <Image
                   src={place.icon}
@@ -70,7 +76,9 @@ const Experience = () => {
                   className="object-contain my-3 h-[50px] max-h-[50px] max-w-[200px]"
                 />
               )}
-              <h4 className="text-l font-bold mt-4">{place.title}</h4>
+              <h4 className="text-l font-bold mt-4  text-neutral-900 dark:text-neutral-100">
+                {place.title}
+              </h4>
               <p className="font-bold my-3">{place.duration}</p>
               <p>{place.description}</p>
             </Link>

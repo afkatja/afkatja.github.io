@@ -14,7 +14,7 @@ const navItems = [
 
 const header = () => {
   return (
-    <header className="site-header top-bar py-5 sticky top-0 bg-white/40">
+    <header className="site-header top-bar py-5 sticky top-0 bg-neutral-200/40 dark:bg-neutral-600/80 text-neutral-900 dark:text-neutral-100">
       <nav className="site-nav top-bar-right mx-auto w-11/12">
         <ul className="flex flex-wrap gap-2 items-center">
           <li className="flex flex-wrap items-center">

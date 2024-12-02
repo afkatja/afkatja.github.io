@@ -8,7 +8,11 @@ const PagesLayout = async ({
   className?: string
 }) => {
   return (
-    <article className={`prose mx-auto py-5 ${className ?? ""}`}>
+    <article
+      className={`prose dark:prose-invert prose-neutral mx-auto py-5 ${
+        className ?? ""
+      }`}
+    >
       {children}
     </article>
   )
