@@ -2,7 +2,14 @@
 const tailwindConfig = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {},
+        error: "#be123c",
+        info: "#d97706",
+        success: "#14b8a6",
+      },
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 }
