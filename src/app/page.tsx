@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <article className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 text-neutral-900 dark:text-neutral-100">
       <Image
-        src="/katja.jpg"
+        src="/katja.gif"
         alt="katja"
         width={800}
         height={500}
