@@ -1,58 +1,51 @@
 import React from "react"
-import Link from "next/link"
-import {
-  AiOutlineLinkedin,
-  AiOutlineMail,
-  AiOutlinePhone,
-  AiOutlineWhatsApp,
-} from "react-icons/ai"
-import decryptStrings from "./encryption"
+import { motion } from "motion/react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
-const ContactInfo = () => {
-  const email = btoa("afkatja@gmail.com")
-  const phoneNumber = btoa("+50687495341")
+  const contactInfo = [
+    {
+      icon: Mail,
+      label: "Email",
+      value: "afkatja@gmail.com",
+      href: "mailto:afkatja@gmail.com",
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: "+506 87495341",
+      href: "tel:+50687495341",
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "Puerto Jiménez, Costa Rica",
+      href: "#",
+    },
+  ]
+
+const ContactInfo = ({isInView}: {isInView: boolean}) => {
 
   return (
-    <div className="md:w-1/3 bg-gradient-to-br from-blue-500 to-green-400 p-10 text-neutral-100 dark:from-blue-900 dark:to-green-700">
-      <h2 className="text-3xl font-bold mb-6 text-white">Let's Connect</h2>
-      <p className="mb-6">
-        Interested in collaborating or have a project in mind? I'm always open
-        to discussing web development opportunities.
-      </p>
-
-      <div className="space-y-4">
-        <div className="flex items-center">
-          <AiOutlineMail className="mr-4" />
-          <Link
-            href={`mailto:${atob(email)}`}
-            className="no-underline text-white hover:animate-pulse"
-          >
-            {atob(email)}
-          </Link>
-        </div>
-        <div className="flex items-center">
-          <AiOutlinePhone className="mr-2" />
-          /
-          <AiOutlineWhatsApp className="mx-2" />
-          <Link
-            href={`tel:${atob(phoneNumber)}`}
-            className="no-underline text-white hover:animate-pulse"
-          >
-            {atob(phoneNumber)}
-          </Link>
-        </div>
-        <div className="flex items-center">
-          <AiOutlineLinkedin className="mr-4" />
-          <Link
-            href="https://www.linkedin.com/in/yourprofile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline text-white hover:animate-pulse"
-          >
-            LinkedIn Profile
-          </Link>
-        </div>
-      </div>
+    <div className="space-y-4">
+      {contactInfo.map((info, index) => (
+        <motion.a
+          key={index}
+          href={info.href}
+          className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-all duration-300 group"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+          whileHover={{ scale: 1.02, x: 10 }}
+        >
+          <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+            <info.icon size={20} />
+          </div>
+          <div>
+            <h4 className="font-semibold">{info.label}</h4>
+            <p className="text-muted-foreground">{info.value}</p>
+          </div>
+        </motion.a>
+      ))}
     </div>
   )
 }
