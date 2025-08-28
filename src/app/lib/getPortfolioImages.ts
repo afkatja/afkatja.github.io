@@ -45,7 +45,7 @@ const categories = {
  * @returns {string|undefined} The category name, or undefined if no match is found.
  */
 function pickCategory(labels: (string | undefined | null)[]): string {
-  if (!labels || labels.length === 0) return undefined
+  if (!labels || labels.length === 0) return "Other"
 
   const normalizedLabels = labels
     .filter(label => typeof label === "string" && !!label)

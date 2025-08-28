@@ -68,7 +68,7 @@ const projects: ProjectCardProps[] = [
     category: "frontend",
     title: "Bolster",
     description:
-      "Front-end development of a flexible and versatile system of custom built components and templates to empower NGOs and independent journalistic organizations on the web. Tailoring the UI for the specific clients' needs and requirements. Constantly improving and further developing responsive and browser/OS agnostic design system.",
+      "A platform supporting NGOs and independent journalistic organizations with a flexible, versatile web presence. I worked on the front-end development, building a custom design system with React and Storybook, integrated into the Perikles WordPress framework. The system included reusable components and templates, tailored to clients’ needs, and designed for responsiveness and cross-browser compatibility.",
     technologies: ["React", "wordpress", "styled components", "node"],
     imageUrl: "/bolster.png",
     githubLink: "",
@@ -80,7 +80,7 @@ const projects: ProjectCardProps[] = [
     category: "frontend",
     title: "Fietsersbond",
     description:
-      "The portal website of the Dutch cyclists union, with subsites for local departments. Built with Worpress custom theme platform (Perikles), with advanced custom components and templates, using webpack, sass and ecmascript.",
+      "The portal website of the Dutch Cyclists’ Union, featuring subsites for local departments. Built on a custom WordPress theme platform (Perikles) with advanced components and templates, using React, Webpack, Sass, and ECMAScript for a scalable and maintainable front end.",
     technologies: ["React", "wordpress", "sass", "node"],
     imageUrl: "/fietsersbond.svg",
     githubLink: "",
@@ -92,8 +92,8 @@ const projects: ProjectCardProps[] = [
     category: "frontend",
     title: "One world",
     description:
-      "The platform for the Dutch digital magazine dealing with the issues of politics, sustainability and citizen awareness.",
-    technologies: ["React", "wordpress", "sass", "node"],
+      "The online platform for the Dutch digital magazine focused on politics, sustainability, and citizen awareness. I developed the site on WordPress, building custom plugins to extend functionality. On the front end, we used React with styled-components to create a modern, responsive, and maintainable user experience.",
+    technologies: ["React", "wordpress", "styled components", "node"],
     imageUrl: "/oneworld.svg",
     githubLink: "",
     liveLink: "",
@@ -104,8 +104,8 @@ const projects: ProjectCardProps[] = [
     category: "frontend",
     title: "Schooltas",
     description:
-      "The learning platform that combines enriched eBooks with social & collaborative learning tools. A web application with a shared interface for schoolchildren, teachers and book editors that enables entirely digital learning environment: reading, writing, making notes and drawings, reviewing homework, playing games like wordweb and enriching book content with interactive elements (video, photo, game, etc).",
-    technologies: ["vue", "sass", "node"],
+      "A digital learning platform that combines enriched eBooks with social and collaborative tools for schoolchildren, teachers, and book editors. The web application supports reading, writing, note-taking, drawing, reviewing homework, playing educational games, and enriching content with interactive media. I was responsible for building the account section of the app, enabling teachers and students to manage their personal learning environment and access collaborative features. The project was built using Vue.js and Sass, following BEM and SMACSS principles for maintainable HTML5/CSS3.",
+    technologies: ["vue.js", "sass", "node"],
     liveLink: "",
     imageUrl: "/schooltas.avif",
     githubLink: "",
@@ -116,8 +116,8 @@ const projects: ProjectCardProps[] = [
     category: "frontend",
     title: "Staatsloterij",
     description:
-      "The website of the Dutch State lottery. Responsive webshop and website.",
-    technologies: [".net", "angular", "backbone.js", "sass"],
+      "The official website of the Dutch State Lottery, built as a responsive webshop and information portal. I was responsible for the account section, where users could interactively check their winnings through a gamified interface. The project combined  frontend frameworks (Backbone.js, Angular.js, Knockout.js) with a Java/Groovy backend, following OOcss principles for maintainable HTML5/CSS3.",
+    technologies: [".net", "angular", "backbone.js", "css3", "OOcss"],
     imageUrl: "staatsloterij.avif",
     githubLink: "",
     liveLink: "http://staatsloterij.nl",

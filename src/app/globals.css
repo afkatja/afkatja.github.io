@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -195,4 +196,8 @@
 
 html {
   font-size: var(--font-size);
+}
+
+.prose {
+  max-width: 90ch;
 }
