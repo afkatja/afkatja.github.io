@@ -37,6 +37,7 @@ const PhotoCard = ({
           src={photo.src}
           alt={photo.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          priority={photo.id < 4}
         />
 
         {/* Overlay */}

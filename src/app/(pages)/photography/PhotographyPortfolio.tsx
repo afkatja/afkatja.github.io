@@ -1,23 +1,74 @@
 "use client"
 
 import { motion, useInView, AnimatePresence } from "motion/react"
-import { useRef, useState } from "react"
-import { X, Eye, Heart, ZoomIn } from "lucide-react"
-import { ImageWithFallback } from "@/components/imageWithFallback"
-import { categories, Category, photos } from "./data"
+import { useEffect, useRef, useState } from "react"
+import { Camera } from "lucide-react"
+
+import { categories, Category, getPresentCategories } from "./data"
 import PhotoCard from "./PhotoCard"
 import Lightbox from "./Lightbox"
+import Loader from "@/components/ui/loader"
 
 export function PhotographyPortfolio() {
   const ref = useRef(null)
+  const photos = useRef<
+    {
+      id: number
+      src: string
+      title: string
+      category: string
+      height: string
+    }[]
+  >([])
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [selectedImage, setSelectedImage] = useState<any>(null)
-  const [activeFilter, setActiveFilter] = useState("all")
+  const [activeFilter, setActiveFilter] = useState(Category.All)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function fetchPhotos() {
+      const response = await fetch(
+        "api/portfolio-images" +
+          "?url=" +
+          encodeURIComponent("https://katjahollaar.myportfolio.com/favorites"),
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      )
+      const { imageUrls } = await response.json()
+
+      photos.current = imageUrls.map(
+        (item: { url: string; category: string }, index: number) => ({
+          id: index,
+          src: item.url,
+          title: `Photo ${index + 1}`,
+          category: item.category,
+          height: `h-${8 * (Math.floor(Math.random() * 5) + 8)}`,
+        })
+      )
+    }
+    fetchPhotos()
+  }, [])
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000) // Reduced loading time for navigation
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const filteredPhotos =
     activeFilter === Category.All
-      ? photos
-      : photos.filter(photo => photo.category === activeFilter)
+      ? photos.current
+      : photos.current.filter(
+          photo => photo.category.toLowerCase() === activeFilter
+        )
+
+  // if (loading) return "loading..."
+  const categoriesToDisplay = getPresentCategories(photos.current)
 
   return (
     <motion.section
@@ -47,12 +98,12 @@ export function PhotographyPortfolio() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          {categories.map((category, index) => (
+          {categoriesToDisplay.map((category, index) => (
             <motion.button
-              key={category.id}
-              onClick={() => setActiveFilter(category.id)}
+              key={`${category}-${index}`}
+              onClick={() => setActiveFilter(category)}
               className={`relative px-6 py-3 rounded-full transition-all duration-300 ${
-                activeFilter === category.id
+                activeFilter === category
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
                   : "bg-card border border-border hover:border-primary/50"
               }`}
@@ -63,8 +114,8 @@ export function PhotographyPortfolio() {
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
             >
               <span className="flex items-center gap-2">
-                <category.icon size={18} />
-                {category.label}
+                <Camera size={18} />
+                {category.charAt(0).toUpperCase() + category.slice(1)}
               </span>
             </motion.button>
           ))}

@@ -35,7 +35,7 @@ const Lightbox = ({
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative max-w-7xl max-h-[90vh] w-full rounded-lg overflow-hidden"
+            className="relative max-w-7xl h-[90vh] w-full rounded-lg overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
             <ImageWithFallback
@@ -44,11 +44,11 @@ const Lightbox = ({
               className="w-full h-full object-contain"
             />
 
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+            {/*<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
               <h3 className="text-white text-2xl font-bold mb-2">
                 {photo.title}
               </h3>
-              {/* <div className="flex items-center justify-between text-white/80">
+               <div className="flex items-center justify-between text-white/80">
                 <span className="capitalize">{photo.category}</span>
                 <div className="flex items-center gap-2">
                   <Eye size={16} />
@@ -56,8 +56,8 @@ const Lightbox = ({
                   <Heart size={16} className="ml-4" />
                   <span>{photo.likes}</span>
                 </div>
-              </div> */}
-            </div>
+              </div>
+            </div> */}
           </motion.div>
         </motion.div>
       )}
