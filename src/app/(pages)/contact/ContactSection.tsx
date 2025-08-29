@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
-import { Github, Linkedin, Instagram, Twitter } from "lucide-react"
+import { Github, Linkedin, Instagram, Twitter, Facebook } from "lucide-react"
 import ContactForm from "./ContactForm"
 import ContactInfo from "./ContactInfo"
 
@@ -11,10 +11,22 @@ export default function ContactSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Github, href: "https://github.com/afkatja", label: "GitHub" },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/katjahollaar/",
+      label: "LinkedIn",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/katjahollaar",
+      label: "Instagram",
+    },
+    {
+      icon: Facebook,
+      href: "http://facebook.com/katja.hollaar",
+      label: "Facebook",
+    },
   ]
 
   return (
@@ -44,7 +56,7 @@ export default function ContactSection() {
           className="space-y-8"
         >
           <div>
-            <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+            <h3 className="text-2xl font-bold mb-6">Say hello</h3>
             <p className="text-muted-foreground mb-8">
               Whether you need a new website, have a photography project in
               mind, or just want to say hello, I'd love to hear from you.
@@ -68,7 +80,7 @@ export default function ContactSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h4 className="font-semibold mb-4">Follow Me</h4>
+              <h3 className="font-semibold mb-4">Let's connect</h3>
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
