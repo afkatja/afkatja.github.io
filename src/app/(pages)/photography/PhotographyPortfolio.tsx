@@ -34,6 +34,7 @@ export function PhotographyPortfolio() {
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
+          cache: "no-store",
         }
       )
       const { imageUrls } = await response.json()
