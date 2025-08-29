@@ -170,7 +170,9 @@ export function HeroSection({
         <motion.div variants={itemVariants} className="flex justify-center">
           <MotionButton
             variant="ghost"
-            onClick={() => router.push("/about")}
+            onClick={() =>
+              scrollTo({ top: window.innerHeight, behavior: "smooth" })
+            }
             className="flex flex-col items-center text-white/80 transition-colors hover:bg-transparent hover:text-white hover:text-shadow-2xs"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
