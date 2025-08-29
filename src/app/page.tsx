@@ -3,6 +3,7 @@ import Link from "next/link"
 import Markdown from "react-markdown"
 import { HeroSection } from "../components/heroSection"
 import { PageLayout } from "../components/pageLayout"
+import { getPortfolioImageUrls } from "./lib/getPortfolioImages"
 
 const home = `# Web Developer | Digital Solutions Architect | Wildlife Photographer | Perpetual Learner
 
@@ -12,7 +13,29 @@ My passion for capturing the nuanced beauty of wildlife through photography mirr
 
 When not writing code or tracking rare birds through the Costa Rican jungle, you'll find me welding, constructing, or diving into a new book – a perpetual student of both technology and the natural world. My work is a testament to the art of continuous learning and creative problem-solving.`
 
-export default function Home() {
+const Home = async () => {
+  const imageUrls = await getPortfolioImageUrls(
+    "https://katjahollaar.myportfolio.com/favorites"
+  )
+
+  const photos: {
+    id: number
+    src: string
+    title: string
+    category: string
+    height: string
+  }[] = imageUrls.map(
+    (item: { url: string; category: string }, index: number) => ({
+      id: index,
+      src: item.url,
+      title: `Photo ${index + 1}`,
+      category: item.category,
+      height: `h-full`,
+    })
+  )
+  const slides = photos.filter(
+    photo => photo.category.toLowerCase() === "landscape"
+  )
   return (
     // <article className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 text-neutral-900 dark:text-neutral-100">
     //   <Image
@@ -34,7 +57,9 @@ export default function Home() {
     //   <Markdown className="col-span-2 my-10">{home}</Markdown>
     // </article>
     <PageLayout showFooter={false}>
-      <HeroSection />
+      <HeroSection slides={slides} />
     </PageLayout>
   )
 }
+
+export default Home
