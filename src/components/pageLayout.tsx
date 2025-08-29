@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "motion/react"
 import Navigation from "./navigation"
 import Loader from "./ui/loader"
+import Footer from "./footer"
 
 interface PageLayoutProps {
   children: React.ReactNode
@@ -123,20 +124,7 @@ export function PageLayout({ children, showFooter = true }: PageLayoutProps) {
       </motion.button>
 
       {/* Footer */}
-      {showFooter && (
-        <motion.footer
-          className="py-8 px-6 border-t border-border bg-background/80 backdrop-blur-sm"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <div className="max-w-7xl mx-auto text-center">
-            <p className="text-muted-foreground">
-              © 2024 Katia Hollaar. Designed and developed with ❤️
-            </p>
-          </div>
-        </motion.footer>
-      )}
+      {showFooter && <Footer />}
     </motion.div>
   )
 }
