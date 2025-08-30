@@ -4,7 +4,7 @@ const about = `# My Journey: Code, Creativity & AI Exploration
 
 ## A Decade in Web Development
 
-My web development path began over 12 years ago with a simple spark: writing code and watching ideas come alive on screen. What started as fascination grew into a deep passion for building complex systems, elegant interfaces, and meaningful digital experiences.
+My web development path began 10+ years ago with a simple spark: writing code and watching ideas come alive on screen. What started as fascination grew into a deep passion for building complex systems, elegant interfaces, and meaningful digital experiences.
 
 ### Professional Evolution
 - **Agency Roots**: Learning the craft at a major web agency  

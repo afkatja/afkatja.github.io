@@ -12,9 +12,15 @@ My passion for capturing the nuanced beauty of wildlife through photography mirr
 When not writing code, experimenting with AI-driven workflows, or tracking rare birds through the Costa Rican jungle, you'll find me welding, building, or diving into a new book—a perpetual student of both technology and the natural world. My work reflects a dedication to continuous learning, creative problem-solving, and the seamless fusion of diverse disciplines into meaningful, usable solutions.`
 
 const Home = async () => {
-  const imageUrls = await getPortfolioImageUrls(
-    "https://katjahollaar.myportfolio.com/favorites"
-  )
+  let imageUrls: { url: string; category: string }[] = []
+  try {
+    imageUrls = await getPortfolioImageUrls(
+      "https://katjahollaar.myportfolio.com/favorites"
+    )
+  } catch (err) {
+    console.error("Failed to load portfolio images:", err)
+    imageUrls = []
+  }
 
   const photos: {
     id: number
@@ -32,7 +38,7 @@ const Home = async () => {
     })
   )
   const slides = photos.filter(
-    photo => photo.category.toLowerCase() === "landscape"
+    photo => (photo.category ?? "").toLowerCase() === "landscape"
   )
   return (
     <PageLayout showFooter={false}>

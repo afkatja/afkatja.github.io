@@ -8,69 +8,76 @@ import { categories, Category, getPresentCategories } from "./data"
 import PhotoCard from "./PhotoCard"
 import Lightbox from "./Lightbox"
 import Loader from "@/components/ui/loader"
-
+type Photo = {
+  id: number
+  src: string
+  title: string
+  category: string
+  height: string
+}
 export function PhotographyPortfolio() {
   const ref = useRef(null)
-  const photos = useRef<
-    {
-      id: number
-      src: string
-      title: string
-      category: string
-      height: string
-    }[]
-  >([])
+
+  const [photos, setPhotos] = useState<Photo[]>([])
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [selectedImage, setSelectedImage] = useState<any>(null)
   const [activeFilter, setActiveFilter] = useState(Category.All)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    const ac = new AbortController()
     async function fetchPhotos() {
-      const response = await fetch(
-        "api/portfolio-images" +
-          "?url=" +
-          encodeURIComponent("https://katjahollaar.myportfolio.com/favorites"),
-        {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-          cache: "no-store",
-        }
-      )
-      const { imageUrls } = await response.json()
+      try {
+        const response = await fetch(
+          "api/portfolio-images" +
+            "?url=" +
+            encodeURIComponent(
+              "https://katjahollaar.myportfolio.com/favorites"
+            ),
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            cache: "no-store",
+          }
+        )
+        const { imageUrls } = await response.json()
 
-      photos.current = imageUrls.map(
-        (item: { url: string; category: string }, index: number) => ({
-          id: index,
-          src: item.url,
-          title: `Photo ${index + 1}`,
-          category: item.category,
-          height: `h-${8 * (Math.floor(Math.random() * 5) + 8)}`,
+        const list = (Array.isArray(imageUrls) ? imageUrls : []) as Array<
+          string | { url: string; category?: string }
+        >
+        const normalized: Photo[] = list.map((item, index) => {
+          const url = typeof item === "string" ? item : item.url
+          const category = (
+            typeof item === "string" ? "other" : item.category || "other"
+          ).toLowerCase()
+          const heights = ["h-64", "h-72", "h-80", "h-96", "h-[28rem]"]
+          return {
+            id: index,
+            src: url,
+            title: `Photo ${index + 1}`,
+            category,
+            height: heights[index % heights.length],
+          }
         })
-      )
+        setPhotos(normalized)
+      } catch (err) {
+        console.error("Error fetching photos:", err)
+      } finally {
+        setLoading(false)
+      }
     }
     fetchPhotos()
-  }, [])
-
-  useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 1000) // Reduced loading time for navigation
-
-    return () => clearTimeout(timer)
+    return () => ac.abort()
   }, [])
 
   const filteredPhotos =
     activeFilter === Category.All
-      ? photos.current
-      : photos.current.filter(
-          photo => photo.category.toLowerCase() === activeFilter
-        )
+      ? photos
+      : photos.filter(photo => photo.category.toLowerCase() === activeFilter)
 
   // if (loading) return "loading..."
-  const categoriesToDisplay = getPresentCategories(photos.current)
-
+  const categoriesToDisplay = getPresentCategories(photos)
+  if (loading) return <Loader />
   return (
     <motion.section
       ref={ref}

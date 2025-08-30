@@ -45,7 +45,7 @@
 
   --spacing: 0.25rem;
 
-  --header-height: var(--spacing) * 20;
+  --header-height: calc(var(--spacing) * 20);
 }
 
 .dark {

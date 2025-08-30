@@ -1,30 +1,30 @@
+"use client"
 import React from "react"
 import { motion } from "motion/react"
 import { Mail, MapPin, Phone } from "lucide-react"
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "afkatja@gmail.com",
-      href: "mailto:afkatja@gmail.com",
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+506 87495341",
-      href: "tel:+50687495341",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Puerto Jiménez, Costa Rica",
-      href: "#",
-    },
-  ]
+const contactInfo = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "afkatja@gmail.com",
+    href: "mailto:afkatja@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+506 87495341",
+    href: "tel:+50687495341",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Puerto Jiménez, Costa Rica",
+    href: "#",
+  },
+]
 
-const ContactInfo = ({isInView}: {isInView: boolean}) => {
-
+const ContactInfo = ({ isInView }: { isInView: boolean }) => {
   return (
     <div className="space-y-4">
       {contactInfo.map((info, index) => (
