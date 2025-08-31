@@ -59,6 +59,7 @@ export function PhotographyPortfolio() {
             height: heights[index % heights.length],
           }
         })
+
         setPhotos(normalized)
       } catch (err) {
         console.error("Error fetching photos:", err)
@@ -75,15 +76,23 @@ export function PhotographyPortfolio() {
       ? photos
       : photos.filter(photo => photo.category.toLowerCase() === activeFilter)
 
-  // if (loading) return "loading..."
-  const categoriesToDisplay = getPresentCategories(photos)
-  if (loading) return <Loader />
+  const categoriesToDisplay = [Category.All, ...getPresentCategories(photos)]
+
   return (
     <motion.section
       ref={ref}
-      className="py-20 px-6 bg-gradient-to-b from-accent/10 to-background"
+      className="relative py-20 px-6 bg-gradient-to-b from-accent/10 to-background"
     >
-      <div className="max-w-7xl mx-auto">
+      {loading && (
+        <div className="absolute inset-0 z-20 flex items-center justify-center bg-background/80">
+          <Loader />
+        </div>
+      )}
+      <div
+        className={`max-w-7xl mx-auto ${
+          loading ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

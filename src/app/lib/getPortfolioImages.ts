@@ -67,19 +67,6 @@ function pickCategory(labels: (string | undefined | null)[]): string {
 async function getPortfolioImageUrls(projectUrl: string) {
   const imageUrls: { url: string; category: string }[] = []
   try {
-    const { VISION_API_KEY } = process.env
-    if (!VISION_API_KEY) {
-      throw new Error("VISION_API_KEY is not set in environment variables")
-    }
-    const credentialsJson = JSON.parse(
-      Buffer.from(VISION_API_KEY, "base64").toString("utf-8")
-    )
-    const visionClient = new vision.ImageAnnotatorClient({
-      credentials: {
-        private_key: credentialsJson.private_key?.replace(/\\n/g, "\n"),
-        client_email: process.env.VISION_CLIENT_EMAIL,
-      },
-    })
     const response = await fetch(projectUrl)
 
     if (!response.ok) {
@@ -95,7 +82,20 @@ async function getPortfolioImageUrls(projectUrl: string) {
     const imagesWithLabels = Array.from(imageElements).map(async (img: any) => {
       const url = img.getAttribute("data-src") || img.src
 
-      const [result] = await visionClient.labelDetection(url)
+      const response = await fetch(
+        "https://vision-api-proxy-348112642196.northamerica-south1.run.app",
+        {
+          method: "POST",
+          headers: {
+            Authorization:
+              "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0ODQyNDY4MjY3OTEyMTI2NTkyIiwiZW1haWwiOiJhZmthdGphQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiUmg0cnEzck1UQlQtUWJkS0JaMEkzQSIsIm5iZiI6MTc1NjYxMDU0MCwiaWF0IjoxNzU2NjEwODQwLCJleHAiOjE3NTY2MTQ0NDAsImp0aSI6ImEyZjRkMGIzOTExMWRhMTU2OGFiYjNkZGZjNDFjOTkzYzVjZWQ2YTcifQ.sA658pNq1N-bhX6OT-uf0t3dPVQwtRam5Bh46aBDozUagLTw5_oFui__2NrkZESblQPjveuYvceXoBYoSKrztV3iR-_4cAAQH90viJ7DqUHR-wnji48X19UpAsxjKeS52nzR0T3HN-LA4YR-5Avm4TDAfJ-LMeoyv-46JfYFlV0YKFjkXpnduWHlplBxfXcee_FG06b2rkT9o7Eu0faTt1mYJwR8_VXPCsxZ8oGYqbuubYqRJyMZSSgf8w23b_mRfAcefsqVBVoHWIa-N79GryWXECeAgEtQiiktwbTkiNuanzRvQHpv8yxtDI3CxcuKH4KcbZF_0AIV3sSGpm-Otw",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ imageUrl: url }),
+        }
+      )
+      const result = await response.json()
+
       const labels = result.labelAnnotations!
       const labelsSorted = labels
         // ?.filter(label => !!label.topicality)
