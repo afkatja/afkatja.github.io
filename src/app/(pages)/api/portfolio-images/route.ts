@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ imageUrls }, { status: 200 })
   } catch (error) {
     return NextResponse.json(
-      { error: (error as Error).message || "internal server error" },
+      { error: "internal server error" },
       { status: 500 }
     )
   }
