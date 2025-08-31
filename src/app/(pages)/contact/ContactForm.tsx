@@ -1,159 +1,207 @@
 "use client"
 import React, { useState } from "react"
-import {
-  AiOutlineCheckCircle,
-  AiOutlineExclamationCircle,
-  AiOutlineInfoCircle,
-} from "react-icons/ai"
+import { motion } from "motion/react"
+import emailjs from "@emailjs/browser"
 
-enum Status {
-  success = "success",
-  info = "info",
-  error = "error",
-}
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Send } from "lucide-react"
 
-const statusObj = {
-  [Status.success]: {
-    message: "Thanks for your submission!",
-    icon: AiOutlineCheckCircle,
-    className: "text-success",
-  },
-  [Status.error]: {
-    message: "Oops! There was a problem.",
-    icon: AiOutlineExclamationCircle,
-    className: "text-error",
-  },
-  [Status.info]: {
-    message: "Submission failed. Please try again.",
-    icon: AiOutlineInfoCircle,
-    className: "text-info",
-  },
-}
+const serviceId = "service_ctxnmho" //"service_9pqrqmn"
+const templateId = "template_ol6klxw"
 
-const ContactForm = () => {
+const ContactForm = ({ isInView }: { isInView: boolean }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   })
-  const [status, setStatus] = useState<null | Status>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleChange: (e: any) => void = e => {
-    const { name, value } = e.target
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value,
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    const { name, email, subject, message } = formData
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          name,
+          email,
+          subject,
+          message,
+        },
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
+      )
+      console.log("SUCCESS!", response.status, response.text)
+      setStatus("success")
+    } catch (error) {
+      console.error("Error sending email to emailjs:", error)
+
+      setStatus("error")
+    } finally {
+      setFormData({ name: "", email: "", subject: "", message: "" })
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
     }))
   }
 
-  const handleSubmit: (e: any) => void = async e => {
-    e.preventDefault()
-    const form = e.target
-    const formspreeEndpoint = "https://formspree.io/f/myzyvezy"
-
-    try {
-      const response = await fetch(formspreeEndpoint, {
-        method: "POST",
-        body: new FormData(form),
-        headers: {
-          Accept: "application/json",
-        },
-      })
-
-      if (response.ok) {
-        setStatus(Status.success)
-        setFormData({ name: "", email: "", message: "" })
-      } else {
-        const errorData = await response.json()
-        setStatus(Status.error)
-        console.error(errorData)
-      }
-    } catch (error) {
-      setStatus(Status.info)
-      console.error(error)
-    }
-    setFormData({ name: "", email: "", message: "" })
-  }
-
-  const Icon = status ? statusObj[status].icon : statusObj[Status.error].icon
-
   return (
-    <div className="md:w-2/3 p-10">
-      <h3 className="text-2xl font-semibold mb-6 text-neutral-900 dark:text-neutral-200">
-        Send me a Message
-      </h3>
-      {!status && (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-neutral-900 dark:text-neutral-200"
+    <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: 0.4 }}
+    >
+      {status === "idle" ? (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Name
-            </label>
-            <input
+              <Label htmlFor="name">Name *</Label>
+              <Input
+                id="name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full"
+                placeholder="Your name"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full"
+                placeholder="your@email.com"
+              />
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.7 }}
+          >
+            <Label htmlFor="subject">Subject *</Label>
+            <Input
+              id="subject"
+              name="subject"
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
               required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
+              value={formData.subject}
+              onChange={handleInputChange}
+              className="w-full"
+              placeholder="Project inquiry, collaboration, etc."
             />
-          </div>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-neutral-900 dark:text-neutral-200"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-neutral-900 dark:text-neutral-200"
-            >
-              Message
-            </label>
-            <textarea
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <Label htmlFor="message">Message *</Label>
+            <Textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
               required
-              rows={4}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
+              value={formData.message}
+              onChange={handleInputChange}
+              className="w-full min-h-32"
+              placeholder="Tell me about your project or what you have in mind..."
             />
-          </div>
-          <div>
-            <button
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.9 }}
+          >
+            <Button
               type="submit"
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 hover:animate-pulse transition duration-300 dark:bg-blue-900 dark:hover:bg-blue-950"
+              disabled={isSubmitting}
+              className="w-full group"
+              size="lg"
             >
-              Send Message
-            </button>
-          </div>
+              <motion.span
+                className="flex items-center gap-2"
+                animate={isSubmitting ? { scale: [1, 1.05, 1] } : {}}
+                transition={{
+                  repeat: isSubmitting ? Infinity : 0,
+                  duration: 1,
+                }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <motion.div
+                      className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 1,
+                        ease: "linear",
+                      }}
+                    />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send
+                      size={20}
+                      className="group-hover:translate-x-1 transition-transform"
+                    />
+                    Send Message
+                  </>
+                )}
+              </motion.span>
+            </Button>
+          </motion.div>
         </form>
-      )}
-      {status && !!Icon && (
-        <p
-          className={`mt-4 flex flex-wrap items-center ${statusObj[status].className}`}
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Icon className={`mr-3`} />
-          {statusObj[status].message}
-        </p>
+          {status === "success" ? (
+            <p className="text-green-500 text-lg">Message sent successfully!</p>
+          ) : (
+            <p className="text-red-500 text-lg">
+              Something went wrong. Please try again later.
+            </p>
+          )}
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,35 +1,69 @@
-import Image from "next/image"
 import Link from "next/link"
 import Markdown from "react-markdown"
+import { HeroSection } from "../components/heroSection"
+import { PageLayout } from "../components/pageLayout"
+import { getPortfolioImageUrls } from "./lib/getPortfolioImages"
+import { ChevronRight } from "lucide-react"
 
-const home = `# Web Developer | Digital Solutions Architect | Wildlife Photographer | Perpetual Learner
+const home = `From the intricate syntax of human languages to the elegant structures of programming languages, my journey has been defined by curiosity and adaptation. A former linguist turned web developer, I built the comprehensive web application for Greenwheels before trading European tech scenes for the vibrant tropical forests of Costa Rica.
 
-From the intricate syntax of human languages to the elegant structures of programming languages, my journey has been defined by curiosity and adaptation. A former linguist turned web developer, I crafted the comprehensive web application for Greenwheels before trading European tech scenes for the vibrant tropical forests of Costa Rica.
+My passion for capturing the nuanced beauty of wildlife through photography mirrors my approach to technology: patient, precise, and always seeking to reveal the underlying story. Specializing in React, Next.js, and headless CMS technologies like Sanity, I craft digital experiences that go beyond static websites—integrating APIs, AI tools, and automation to solve real-world problems elegantly and efficiently.
 
-My passion for capturing the nuanced beauty of wildlife through photography mirrors my approach to web development: patient, precise, and always seeking to reveal the underlying story. Specializing in React, Next.js, and headless CMS technologies, I transform complex business requirements into intuitive digital experiences.
+When not writing code, experimenting with AI-driven workflows, or tracking rare birds through the Costa Rican jungle, you'll find me welding, building, or diving into a new book—a perpetual student of both technology and the natural world. My work reflects a dedication to continuous learning, creative problem-solving, and the seamless fusion of diverse disciplines into meaningful, usable solutions.`
 
-When not writing code or tracking rare birds through the Costa Rican jungle, you'll find me welding, constructing, or diving into a new book – a perpetual student of both technology and the natural world. My work is a testament to the art of continuous learning and creative problem-solving.`
+const Home = async () => {
+  let imageUrls: { url: string; category: string }[] = []
+  try {
+    imageUrls = await getPortfolioImageUrls(
+      "https://katjahollaar.myportfolio.com/favorites"
+    )
+  } catch (err) {
+    console.error("Failed to load portfolio images:", err)
+    imageUrls = []
+  }
 
-export default function Home() {
+  const photos: {
+    id: number
+    src: string
+    title: string
+    category: string
+    height: string
+  }[] = imageUrls.map(
+    (item: { url: string; category: string }, index: number) => ({
+      id: index,
+      src: item.url,
+      title: `Photo ${index + 1}`,
+      category: item.category,
+      height: `h-full`,
+    })
+  )
+  const slides = photos.filter(
+    photo => (photo.category ?? "").toLowerCase() === "landscape"
+  )
   return (
-    <article className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 text-neutral-900 dark:text-neutral-100">
-      <Image
-        src="/katja.gif"
-        alt="katja"
-        width={800}
-        height={500}
-        className="m-0"
-      />
-      <div className="bg-gradient-to-br from-blue-500 to-green-400 p-10 text-neutral-100 dark:from-blue-900 dark:to-green-700 flex flex-wrap flex-col">
-        <h1>Hello, I'm Katja Hollaar</h1>
+    <PageLayout showFooter={false}>
+      <HeroSection slides={slides} />
+      <article
+        id="home"
+        className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 gap-4 text-neutral-900 dark:text-neutral-100 place-items-start"
+      >
+        <h2 className="col-span-2 text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          Web Developer | Digital Solutions Architect | Wildlife Photographer |
+          Perpetual Learner
+        </h2>
+        <div>
+          <Markdown>{home}</Markdown>
+        </div>
         <Link
           href="/contact"
-          className="text-3xl font-bold text-white no-underline hover:animate-pulse mt-auto"
+          className="text-3xl font-bold hover:animate-pulse inline-flex items-center gap-2 ml-8 mt-5"
         >
           Let's Connect
+          <ChevronRight className="animate-ping" />
         </Link>
-      </div>
-      <Markdown className="col-span-2 my-10">{home}</Markdown>
-    </article>
+      </article>
+    </PageLayout>
   )
 }
+
+export default Home

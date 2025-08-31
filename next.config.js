@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  basePath: process.env.NODE_ENV === 'production' ? "/afkatja.github.io" : '',
+  // output: "export",
+  ...(process.env.NODE_ENV === 'production' && {basePath:  "/afkatja.github.io"}),
   images: {unoptimized:true}
 };
 

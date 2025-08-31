@@ -1,16 +1,43 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "../styles/style.css"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import { Zain } from "next/font/google"
+import { AnimatePresence, motion } from "motion/react"
+import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const zain = Zain({ subsets: ["latin"], weight: ["400", "700"] })
 
 export const metadata: Metadata = {
-  title: "Digital resume of web developer Katja Hollaar",
-  description: "My portfolio of web projects",
+  title: "Katia Hollaar - Web Developer & Photographer",
+  description:
+    "Portfolio of Katia Hollaar - Creating digital experiences and capturing moments that tell compelling stories",
   icons: {
     icon: "/favicon.ico",
+  },
+  keywords: [
+    "web developer",
+    "photographer",
+    "portfolio",
+    "React",
+    "Next.js",
+    "photography",
+  ],
+  authors: [{ name: "Katia Hollaar" }],
+  creator: "Katia Hollaar",
+  openGraph: {
+    title: "Katia Hollaar - Web Developer & Photographer",
+    description:
+      "Portfolio showcasing web development projects and photography work",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Katia Hollaar - Web Developer & Photographer",
+    description:
+      "Portfolio showcasing web development projects and photography work",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -21,12 +48,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-neutral-100 dark:bg-neutral-700 ${inter.className}`}>
-        <div className="flex flex-col min-h-[100dvh]">
-          <Header />
-          <main className="flex-1 w-11/12 mx-auto">{children}</main>
-          <Footer />
-        </div>
+      <body className={`bg-neutral-100 dark:bg-neutral-700 ${zain.className}`}>
+        <AnimatePresence mode="wait">{children}</AnimatePresence>
       </body>
     </html>
   )

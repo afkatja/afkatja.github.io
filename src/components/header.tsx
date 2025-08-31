@@ -30,7 +30,7 @@ const header = () => {
           </li>
           {navItems.map(item => (
             <li key={crypto.randomUUID()}>
-              <Navigation item={item} />
+              {/* <Navigation item={item} /> */}
             </li>
           ))}
         </ul>
