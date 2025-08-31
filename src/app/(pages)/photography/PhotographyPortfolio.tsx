@@ -8,6 +8,7 @@ import { categories, Category, getPresentCategories } from "./data"
 import PhotoCard from "./PhotoCard"
 import Lightbox from "./Lightbox"
 import Loader from "@/components/ui/loader"
+import { categoriesFromLabels } from "../../lib/getPortfolioImages"
 type Photo = {
   id: number
   src: string
@@ -29,18 +30,17 @@ export function PhotographyPortfolio() {
     async function fetchPhotos() {
       try {
         const response = await fetch(
-          "api/portfolio-images" +
-            "?url=" +
-            encodeURIComponent(
-              "https://katjahollaar.myportfolio.com/favorites"
-            ),
+          "https://get-portfolio-images-348112642196.northamerica-south1.run.app",
           {
-            method: "GET",
+            method: "POST",
             headers: { "Content-Type": "application/json" },
-            cache: "no-store",
+            body: JSON.stringify({
+              projectUrl: "https://katjahollaar.myportfolio.com/favorites",
+              categories: categoriesFromLabels,
+            }),
           }
         )
-        const { imageUrls } = await response.json()
+        const imageUrls = await response.json()
 
         const list = (Array.isArray(imageUrls) ? imageUrls : []) as Array<
           string | { url: string; category?: string }
