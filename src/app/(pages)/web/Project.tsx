@@ -1,4 +1,3 @@
-// import { motion } from "motion/react"
 import { ProjectCardProps } from "./data"
 import { motion } from "motion/react"
 import { ImageWithFallback } from "../../../components/imageWithFallback"

@@ -98,14 +98,14 @@ async function getPortfolioImageUrls(projectUrl: string) {
       const labelsSorted = labels
         // ?.filter(label => !!label.topicality)
         // .filter(label => label.topicality > 0.9)
-        .map(l => l.description)
+        .map((l: { description: string }) => l.description)
 
       return {
         url,
         category:
           !!labelsSorted &&
           labelsSorted.length &&
-          labelsSorted.filter(l => !!l).length
+          labelsSorted.filter((l: string) => !!l).length
             ? pickCategory(labelsSorted)
             : "Other",
       }
