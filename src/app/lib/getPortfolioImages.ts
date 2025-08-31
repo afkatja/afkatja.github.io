@@ -87,8 +87,6 @@ async function getPortfolioImageUrls(projectUrl: string) {
         {
           method: "POST",
           headers: {
-            Authorization:
-              "bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjJkN2VkMzM4YzBmMTQ1N2IyMTRhMjc0YjVlMGU2NjdiNDRhNDJkZGUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjE4MTA0NzA4MDU0LTlyOXMxYzRhbGczNmVybGl1Y2hvOXQ1Mm4zMm42ZGdxLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE0ODQyNDY4MjY3OTEyMTI2NTkyIiwiZW1haWwiOiJhZmthdGphQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiUmg0cnEzck1UQlQtUWJkS0JaMEkzQSIsIm5iZiI6MTc1NjYxMDU0MCwiaWF0IjoxNzU2NjEwODQwLCJleHAiOjE3NTY2MTQ0NDAsImp0aSI6ImEyZjRkMGIzOTExMWRhMTU2OGFiYjNkZGZjNDFjOTkzYzVjZWQ2YTcifQ.sA658pNq1N-bhX6OT-uf0t3dPVQwtRam5Bh46aBDozUagLTw5_oFui__2NrkZESblQPjveuYvceXoBYoSKrztV3iR-_4cAAQH90viJ7DqUHR-wnji48X19UpAsxjKeS52nzR0T3HN-LA4YR-5Avm4TDAfJ-LMeoyv-46JfYFlV0YKFjkXpnduWHlplBxfXcee_FG06b2rkT9o7Eu0faTt1mYJwR8_VXPCsxZ8oGYqbuubYqRJyMZSSgf8w23b_mRfAcefsqVBVoHWIa-N79GryWXECeAgEtQiiktwbTkiNuanzRvQHpv8yxtDI3CxcuKH4KcbZF_0AIV3sSGpm-Otw",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ imageUrl: url }),
