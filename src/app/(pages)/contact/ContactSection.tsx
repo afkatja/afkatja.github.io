@@ -92,6 +92,7 @@ export default function ContactSection() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+                    target="_blank"
                   >
                     <social.icon size={20} />
                   </motion.a>

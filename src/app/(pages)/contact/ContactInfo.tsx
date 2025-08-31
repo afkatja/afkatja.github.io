@@ -20,7 +20,7 @@ const contactInfo = [
     icon: MapPin,
     label: "Location",
     value: "Puerto Jiménez, Costa Rica",
-    href: "#",
+    href: "https://maps.app.goo.gl/62nHNPs12sET7E7h6",
   },
 ]
 
@@ -36,6 +36,7 @@ const ContactInfo = ({ isInView }: { isInView: boolean }) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
           whileHover={{ scale: 1.02, x: 10 }}
+          target="_blank"
         >
           <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
             <info.icon size={20} />

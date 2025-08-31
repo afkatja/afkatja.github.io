@@ -28,22 +28,26 @@ const ProjectCard: React.FC<{
           className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4"
           initial={false}
         >
-          <motion.a
-            href={project.liveLink}
-            className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <ExternalLink size={20} />
-          </motion.a>
-          <motion.a
-            href={project.githubLink}
-            className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <Github size={20} />
-          </motion.a>
+          {project.liveLink && (
+            <motion.a
+              href={project.liveLink}
+              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ExternalLink size={20} />
+            </motion.a>
+          )}
+          {project.githubLink && (
+            <motion.a
+              href={project.githubLink}
+              className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Github size={20} />
+            </motion.a>
+          )}
         </motion.div>
       </div>
 
