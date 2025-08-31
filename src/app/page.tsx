@@ -2,7 +2,7 @@ import Link from "next/link"
 import Markdown from "react-markdown"
 import { HeroSection } from "../components/heroSection"
 import { PageLayout } from "../components/pageLayout"
-import { getPortfolioImageUrls } from "./lib/getPortfolioImages"
+import { fetchPhotos } from "./lib/getPortfolioImages"
 import { ChevronRight } from "lucide-react"
 
 const home = `From the intricate syntax of human languages to the elegant structures of programming languages, my journey has been defined by curiosity and adaptation. A former linguist turned web developer, I built the comprehensive web application for Greenwheels before trading European tech scenes for the vibrant tropical forests of Costa Rica.
@@ -14,9 +14,7 @@ When not writing code, experimenting with AI-driven workflows, or tracking rare 
 const Home = async () => {
   let imageUrls: { url: string; category: string }[] = []
   try {
-    imageUrls = await getPortfolioImageUrls(
-      "https://katjahollaar.myportfolio.com/favorites"
-    )
+    imageUrls = await fetchPhotos()
   } catch (err) {
     console.error("Failed to load portfolio images:", err)
     imageUrls = []

@@ -8,8 +8,8 @@ import { categories, Category, getPresentCategories } from "./data"
 import PhotoCard from "./PhotoCard"
 import Lightbox from "./Lightbox"
 import Loader from "@/components/ui/loader"
-import { categoriesFromLabels } from "../../lib/getPortfolioImages"
-type Photo = {
+import { fetchPhotos } from "../../lib/getPortfolioImages"
+export type Photo = {
   id: number
   src: string
   title: string
@@ -27,21 +27,9 @@ export function PhotographyPortfolio() {
 
   useEffect(() => {
     const ac = new AbortController()
-    async function fetchPhotos() {
+    ;(async function () {
       try {
-        const response = await fetch(
-          "https://get-portfolio-images-348112642196.northamerica-south1.run.app",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              projectUrl: "https://katjahollaar.myportfolio.com/favorites",
-              categories: categoriesFromLabels,
-            }),
-          }
-        )
-        const imageUrls = await response.json()
-
+        const imageUrls = await fetchPhotos()
         const list = (Array.isArray(imageUrls) ? imageUrls : []) as Array<
           string | { url: string; category?: string }
         >
@@ -59,15 +47,15 @@ export function PhotographyPortfolio() {
             height: heights[index % heights.length],
           }
         })
-
         setPhotos(normalized)
       } catch (err) {
-        console.error("Error fetching photos:", err)
+        console.error("Failed to fetch photos:", err)
+        setPhotos([])
+        setLoading(false)
       } finally {
         setLoading(false)
       }
-    }
-    fetchPhotos()
+    })()
     return () => ac.abort()
   }, [])
 
