@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Markdown from "react-markdown"
 import { PageLayout } from "../../../components/pageLayout"
 import { AboutSection } from "./AboutSection"
 

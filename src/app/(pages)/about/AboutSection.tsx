@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
 import { Zap, Award } from "lucide-react"
-import { about, achievements, skills, stats } from "./data"
+import { summary, about, achievements, skills, stats } from "./data"
 import Markdown from "react-markdown"
 
 export function AboutSection() {
@@ -26,10 +26,7 @@ export function AboutSection() {
             About Me
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm passionate about crafting beautiful digital experiences and
-            capturing life's moments through photography. With over 10 years of
-            experience in web development and a keen eye for visual
-            storytelling.
+            {summary}
           </p>
         </motion.div>
 

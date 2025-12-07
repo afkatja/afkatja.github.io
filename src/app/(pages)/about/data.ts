@@ -1,39 +1,50 @@
 import { Code2, Camera, Palette, Zap, Users } from "lucide-react"
+const summary = `I design and build fast, accessible web experiences and capture the world through photography. With 10+ years in web development and a strong visual storytelling background, I bring a rare mix of engineering rigor and creative direction to every project — whether it’s a product interface, a brand site, or a photo series.`
 
-const about = `# My Journey: Code, Creativity & AI Exploration
+const about = `# My Journey: Code, Creativity & Exploration
 
 ## A Decade in Web Development
 
-My web development path began 10+ years ago with a simple spark: writing code and watching ideas come alive on screen. What started as fascination grew into a deep passion for building complex systems, elegant interfaces, and meaningful digital experiences.
+Over the past 10+ years, the through-line in my career has been simple: turning ideas into reliable, human-centered web experiences. What began as curiosity about how a browser renders a few lines of code has evolved into building complex systems, polished interfaces, and products that real people rely on.
 
 ### Professional Evolution
-- **Agency Roots**: Learning the craft at a major web agency  
-- **Enterprise Projects**: Developing large-scale applications for clients like Staatsloterij, Schooltas, and Greenwheels.nl  
-- **Independent Work**: Creating platforms such as **Fincaguarumo.com**, **Barradelcolorado.com**, and this portfolio site  
+- **Agency roots**: Learned the fundamentals of modern frontend development at a major web agency, collaborating with designers and backend engineers to ship production-ready sites.​
+
+- **Enterprise projects**: Helped deliver and evolve large-scale applications for clients like Staatsloterij, Schooltas, and Greenwheels.nl, working in cross-functional teams with established processes and high reliability requirements.​
+
+- **Independent builder**: As an independent developer, I have designed, built, and maintained platforms such as Costa Rica Now, Trade Pulse, FincaGuarumo.com, BarraDelColorado.com, and this portfolio, owning everything from architecture and implementation to deployment and iteration.  
 
 ### Embracing AI & Solo Projects
-Recently, I’ve been exploring how **AI can transform the way we build**. From vibe coding sessions to integrating the **Google Vision API** and experimenting with **OpenAI models**, I’m blending automation with creativity. These solo projects allow me to prototype fast, test ideas, and push the boundaries of what’s possible with modern tools.
+In recent years, a big focus of my work has been exploring how AI can extend what a single developer or small team can ship. I have:​
+- Integrated AI models into real products, from travel and trading assistants with RAG-style context to features powered by OpenAI and Google Vision API.
+- Used AI tools for “vibe coding” sessions, rapid prototyping, debugging, test generation, and content workflows, treating AI as a teammate rather than a gimmick.
+- Designed and iterated on AI-assisted user flows that still feel intuitive, transparent, and trustworthy to end users.
+
+### How I Work: Independently and in Teams
+I’m comfortable owning a project end to end—scoping, breaking down work, making technical decisions, and shipping to production as a solo developer. At the same time, years in agency and product teams taught me how to collaborate closely with Product, Design, and Backend, give and receive feedback, and keep communication clear and honest.​
+
+Whether working solo or embedded in a squad, the goal is the same: de-risk complexity early, keep the feedback loop tight, and continuously refine the experience.
 
 ### Beyond the Code
-My journey also took me from European tech hubs to the Costa Rican jungle, where I balance web development with **wildlife photography, reforestation projects, and building an off-grid lifestyle**. These experiences continue to fuel my creativity and adaptability.
+My path has taken me from European tech hubs to the Costa Rican jungle, where I balance web development with wildlife photography, reforestation projects, and building an off-grid life. That mix of structure and unpredictability keeps me adaptable, curious, and comfortable operating outside of my comfort zone.
 
 ### What Drives Me
-For me, coding is both **art and problem-solving**:  
-- Break down complexity, one step at a time  
-- Keep learning, experimenting, and refining  
-- See every challenge as an opportunity for growth  
+For me, coding is both craft and problem-solving:
+- Break down complex problems into small, testable steps.
+- Learn fast by prototyping, measuring, and iterating.​
+- Treat every challenge—technical or human—as a chance to grow the system and myself.
 
-> In code, as in life, the real magic lies in learning continuously and creating something meaningful.
+The thread through all of this: frontend work, AI integration, solo projects, and team collaborations — is a desire to keep learning and to ship things that are genuinely useful.
 `
 
 const skills = [
   { name: "React/Next.js", level: 95, icon: Code2 },
   { name: "TypeScript", level: 90, icon: Code2 },
+  { name: "AI Integration", level: 60, icon: Zap },
   { name: "UI/UX Design", level: 85, icon: Palette },
   { name: "Design Systems", level: 80, icon: Palette },
   { name: "Wildlife Photography", level: 95, icon: Camera },
   { name: "Landscape Photography", level: 85, icon: Camera },
-  { name: "AI Generalist", level: 60, icon: Zap },
 ]
 
 const achievements = [
@@ -67,4 +78,4 @@ const stats = [
   { icon: Users, number: "10+", label: "Clients & Collaborations" },
 ]
 
-export { about, skills, achievements, stats }
+export { summary, about, skills, achievements, stats }
