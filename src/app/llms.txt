@@ -1,0 +1,28 @@
+# Katia Hollaar – Portfolio
+
+> Frontend-focused web developer integrating AI into real products and capturing visual stories through photography.
+
+This site showcases my work as a frontend engineer (React / Next.js / TypeScript) and my photography, with a strong focus on AI integration, performance, accessibility, and modern UX.
+
+## Key pages
+
+- [Home](https://afkatja.github.io/): Overview of my work in frontend development, AI-integrated projects, and photography.
+- [Projects](https://afkatja.github.io/web): Selected web applications using React and Next.js, including:
+  - AI-powered travel and trading assistants using LLMs and retrieval-augmented generation (RAG).
+  - Interfaces that integrate third-party APIs, authentication, and real-time data.
+- [Photography](https://afkatja.github.io/photography): Curated photography series and visual storytelling.
+- [About](https://afkatja.github.io/about): Background, skills, AI experience, and how I work both independently and in teams.
+- [Contact](https://afkatja.github.io/contact): Contact details and ways to collaborate.
+
+## AI integration
+
+- Experience integrating LLMs into production-like web apps (e.g., OpenAI and open-source models) via HTTP/SDK.
+- Built features using retrieval-augmented generation (RAG) to combine external data sources with language models.
+- Integrated services such as Google Vision API and other AI/ML APIs into full-stack applications.
+- Designed frontend flows and UX around AI features (prompts, responses, feedback loops, error states).
+
+## Technical notes
+
+- Tech stack: React, Next.js, TypeScript, Tailwind CSS, Node.js, modern frontend tooling.
+- Focus areas: AI feature integration, frontend performance, accessibility, responsive design, and DX.
+- Primary audience: teams looking for a frontend developer who can both build great interfaces and integrate AI capabilities into web products.
