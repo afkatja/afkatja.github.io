@@ -102,7 +102,7 @@ export function HeroSection({
               className="w-full h-full object-cover"
             />
             <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+              className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
@@ -124,7 +124,7 @@ export function HeroSection({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
           >
-            Web Developer & Photographer
+            Full-stack Web Developer, AI integration specialist, Photographer
           </motion.p>
 
           <motion.p
@@ -133,8 +133,8 @@ export function HeroSection({
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            Creating digital experiences and capturing moments that tell
-            compelling stories
+            Full‑stack React/Next.js developer integrating LLMs/SLMs and RAG
+            into real‑world products
           </motion.p>
         </motion.div>
 

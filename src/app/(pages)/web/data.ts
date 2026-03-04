@@ -33,13 +33,7 @@ const projects: ProjectCardProps[] = [
     title: "Costa Rica Now",
     description:
       "Hyper-local personalized AI itinerary assistant with news, weather, and other data aggregation for RAG context. AI-first personalized travel assistant with RAG integration, built with NextJS, React, TailwindCSS, supabase functions, LLM/SLM integration via Hugging Face, RAG integration, Google Maps API, various third-party APIs.",
-    technologies: [
-      "React",
-      "Next.js",
-      "Tailwindcss",
-      "supabase",
-      "Hugging Face",
-    ],
+    technologies: ["React", "Next.js", "Tailwindcss", "Supabase", "RAG"],
     imageUrl: "/logo-crn2.jpeg",
     githubLink: "https://github.com/afkatja/costa-rica-now",
     highlight: true,
@@ -50,13 +44,7 @@ const projects: ProjectCardProps[] = [
     title: "Trade Pulse",
     description:
       "AI-first day-trading assistant with financial news aggregation for sentiment analysis and trading advice, built with NextJS, React, TailwindCSS, supabase functions, LLM integration via Hugging Face, RAG integration. Delivered complex UI interfaces aggregating external data sources, with advanced state and performance management",
-    technologies: [
-      "React",
-      "Next.js",
-      "Tailwindcss",
-      "supabase",
-      "Hugging Face",
-    ],
+    technologies: ["React", "Next.js", "Tailwindcss", "Supabase", "RAG"],
     imageUrl: "/trade-pulse.png",
     githubLink: "https://github.com/afkatja/TradePulse",
     highlight: false,
@@ -66,8 +54,16 @@ const projects: ProjectCardProps[] = [
     category: "fullstack",
     title: "Finca Guarumo",
     description:
-      "A web application for a homestead farm in Costa Rica, built with React, Next.js and a headless CMS Sanity.io. The multilingual and responsive website features a blog and a booking system for an accommodation.",
-    technologies: ["React", "Next.js", "Tailwindcss", "Sanity.io"],
+      "A full-stack web application for a homestead farm in Costa Rica, built with React, Next.js, Sanity.io, Supabase, and Stripe. It offers a multilingual, responsive site with a comprehensive booking flow with online payments via Stripe, a blog, and an AI assistant powered by RAG over CMS content, supported by an evaluation and correction pipeline to keep responses accurate.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwindcss",
+      "Sanity.io",
+      "Supabase",
+      "Stripe",
+      "RAG",
+    ],
     imageUrl: "/fincaguarumo.jpg",
     githubLink: "https://github.com/afkatja/fincaguarumo",
     liveLink: "http://fincaguarumo.com",

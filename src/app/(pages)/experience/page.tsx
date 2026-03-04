@@ -13,6 +13,15 @@ interface IWorkPlace {
 
 const workPlaces: IWorkPlace[] = [
   {
+    title: "Freelance Full‑Stack Developer",
+    icon: "🏡",
+    href: "https://afkatja.github.io/web",
+    function: "Freelance, vacation rental manager, homesteader",
+    duration: "December 2022 – present",
+    description:
+      "Building and operating Finca Guarumo as a vacation rental and homestead while working as a freelance full‑stack developer. Recent work focuses on AI integrations with RAG and AI automation on top of a modern React/Next.js/TypeScript/Tailwind CSS/Sanity stack, designing end‑to‑end booking flows, content‑driven experiences, and AI assistants grounded in real data.",
+  },
+  {
     title: "Greenwheels",
     icon: "gw.svg",
     href: "//greenwheels.com",

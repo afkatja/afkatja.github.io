@@ -15,11 +15,19 @@ const content = `# Professional Skills
 - **Vue.js**: Historical experience, foundational understanding
 - **Angular**: Previous project work, basic framework knowledge
 
+## AI & Full‑Stack Capabilities
+- Design and implement full-stack LLM/RAG systems with React/Next.js frontends and Node.js or serverless backends, integrating external data sources and APIs.
+- Integrate AI/ML services such as commercial LLM APIs, open-source models, and tools into existing applications.
+- Build observability around AI features with logging, metrics, and UX feedback mechanisms to understand and improve model behavior over time.
+- Collaborate closely with product and design to shape AI-powered user journeys, from first prompt to edge cases and failure modes.
+- Optimize performance, accessibility, and responsiveness of AI-heavy interfaces, ensuring smooth experiences across devices.
+- Use CI/CD and modern tooling to ship, test, and iterate on AI features reliably as part of a broader web application.
+
 ### Development Tools & Platforms
 - **Version Control**: GitHub
-- **Deployment**: Netlify
+- **Deployment**: Netlify/Vercel
 - **CI/CD**: Continuous Integration/Continuous Deployment tools
-- **Additional Tools**: Webpack, Grunt, GraphQL
+- **Additional Tools**: Github actions, Netlify functions
 
 ## Technical Proficiencies
 - Responsive Web Design
@@ -45,7 +53,8 @@ const content = `# Professional Skills
 - **Programming Languages**: JavaScript, TypeScript
 - **Human Languages**: Dutch, English, Spanish, Russian
 
-> "Technology is best when it brings people together, solves complex problems, and creates meaningful experiences."`
+> "Technology is best when it brings people together, solves complex problems, and creates meaningful experiences." 
+`
 
 const Skills = () => {
   return (

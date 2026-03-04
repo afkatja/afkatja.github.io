@@ -5,11 +5,9 @@ import { PageLayout } from "../components/pageLayout"
 import { fetchPhotos } from "./lib/getPortfolioImages"
 import { ChevronRight } from "lucide-react"
 
-const home = `From the intricate syntax of human languages to the elegant structures of programming languages, my journey has been defined by curiosity and adaptation. A former linguist turned web developer, I built the comprehensive web application for Greenwheels before trading European tech scenes for the vibrant tropical forests of Costa Rica.
+const home = `I’m a former linguist turned full‑stack web developer, now working remotely from the tropical forests of Costa Rica. I build web applications with React, Next.js, TypeScript, Tailwind CSS, and Sanity, and I’ve shifted my focus to integrating AI into real products using LLMs/SLMs, RAG over CMS content and data from various APIs, and automation agents that help users get things done.
 
-My passion for capturing the nuanced beauty of wildlife through photography mirrors my approach to technology: patient, precise, and always seeking to reveal the underlying story. Specializing in React, Next.js, and headless CMS technologies like Sanity, I craft digital experiences that go beyond static websites—integrating APIs, AI tools, and automation to solve real-world problems elegantly and efficiently.
-
-When not writing code, experimenting with AI-driven workflows, or tracking rare birds through the Costa Rican jungle, you'll find me welding, building, or diving into a new book—a perpetual student of both technology and the natural world. My work reflects a dedication to continuous learning, creative problem-solving, and the seamless fusion of diverse disciplines into meaningful, usable solutions.`
+I enjoy designing the whole flow: fast, accessible frontends, solid backends, and AI features that are evaluated, corrected, and improved over time instead of left to “magic.” Alongside development, I run a [homestead and vacation rental](https://fincaguarumo.com), and my [wildlife photography](/photography) keeps me paying attention to detail, whether I’m tracking a rare bird or debugging a stubborn UI.`
 
 const Home = async () => {
   let imageUrls: { url: string; category: string }[] = []
@@ -33,10 +31,10 @@ const Home = async () => {
       title: `Photo ${index + 1}`,
       category: item.category,
       height: `h-full`,
-    })
+    }),
   )
   const slides = photos.filter(
-    photo => (photo.category ?? "").toLowerCase() === "landscape"
+    photo => (photo.category ?? "").toLowerCase() === "landscape",
   )
   return (
     <PageLayout showFooter={false}>
@@ -45,7 +43,7 @@ const Home = async () => {
         id="home"
         className="prose dark:prose-invert prose-neutral mx-auto py-5 md:grid grid-cols-2 gap-4 text-neutral-900 dark:text-neutral-100 place-items-start"
       >
-        <h2 className="col-span-2 text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+        <h2 className="col-span-2 text-3xl md:text-4xl font-bold mb-6 bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
           Web Developer | Digital Solutions Architect | Wildlife Photographer |
           Perpetual Learner
         </h2>
